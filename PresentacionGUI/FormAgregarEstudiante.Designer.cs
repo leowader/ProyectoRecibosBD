@@ -55,6 +55,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtcodigoCurso = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panelFondo.SuspendLayout();
             this.panelEstudiantes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -80,6 +82,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelEstudiantes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelEstudiantes.Controls.Add(this.label9);
+            this.panelEstudiantes.Controls.Add(this.txtcodigoCurso);
             this.panelEstudiantes.Controls.Add(this.pictureBox3);
             this.panelEstudiantes.Controls.Add(this.pictureBox2);
             this.panelEstudiantes.Controls.Add(this.txtGrado);
@@ -375,6 +379,26 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "ID";
             // 
+            // txtcodigoCurso
+            // 
+            this.txtcodigoCurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.txtcodigoCurso.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtcodigoCurso.ForeColor = System.Drawing.SystemColors.Menu;
+            this.txtcodigoCurso.Location = new System.Drawing.Point(282, 242);
+            this.txtcodigoCurso.Name = "txtcodigoCurso";
+            this.txtcodigoCurso.Size = new System.Drawing.Size(88, 13);
+            this.txtcodigoCurso.TabIndex = 40;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label9.Location = new System.Drawing.Point(279, 226);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 13);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "Codigo Curso";
+            // 
             // FormAgregarEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,5 +447,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.TextBox txtcodigoCurso;
     }
 }

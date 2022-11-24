@@ -15,8 +15,6 @@ namespace Logica
         {
             ListaRecibos = RutaRecibos.Leer();
         }
-
-
         public void ActualizarLit()
         {
             ListaRecibos = RutaRecibos.Leer();

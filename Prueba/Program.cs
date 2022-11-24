@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PresentacionGUI
+namespace Prueba
 {
     internal static class Program
     {
@@ -16,11 +16,7 @@ namespace PresentacionGUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormularioMenu());
-            //Application.Run(new Login());
-            //Login login = new Login();
-            //login.Show();
-            //Application.Run();
+            Application.Run(new Form1());
         }
     }
 }

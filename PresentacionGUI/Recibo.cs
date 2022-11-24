@@ -37,7 +37,7 @@ namespace PresentacionGUI
             lblName2.Text = escuela.NombreEscuela;
             labeApellido.Text = ReciboEstudiante.Apellidos;
             labelNombre.Text = ReciboEstudiante.Nombres;
-            labeEscuela.Text = ReciboEstudiante.EscuelaRegistrada;
+            labeEscuela.Text = ReciboEstudiante.idescuela;
             labelPeriodo.Text = ReciboEstudiante.PeriodoEstudio;
             labelObserva.Text = recibo.Observaciones;
             labelRefe.Text = recibo.CodigoReferencia;
@@ -47,10 +47,10 @@ namespace PresentacionGUI
             labelDireccion.Text = escuela.Direccion;
             labelValor.Text = recibo.Cantidad.ToString();
             labelId.Text = ReciboEstudiante.Id.ToString();
-            labelNitEsc.Text = escuela.NiT;
+            labelNitEsc.Text = escuela.NiT.ToString();
             labeLtelefono.Text=escuela.NiT.ToString();
             labelImpresion.Text = DateTime.UtcNow.ToShortDateString().ToString();
-            labelnit2.Text = escuela.NiT;
+            labelnit2.Text = escuela.NiT.ToString();
             labelcedula2.Text = ReciboEstudiante.Id.ToString();
             labelBanco.Text = recibo.Banco.ToString();
             labelFechaLimite2.Text = recibo.FechaLimite.ToShortDateString().ToString();

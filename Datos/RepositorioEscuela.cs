@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,67 +11,64 @@ namespace Datos
 {
     public class RepositorioEscuela:Archivos,ICrudDatos<Escuela>
     {
-        public RepositorioEscuela()
-        {
-            ruta = "Escuela.txt";
-        }
-
+        OracleConnection connection;
+        OracleCommand command;
 
         public bool Guardar(Escuela escuela)
         {
             try
             {
-                StreamWriter sw = new StreamWriter(ruta,true);
-                sw.WriteLine(escuela.ToString().ToUpper());
-                sw.Close();
+                abrirBD();
+                connection = Miconexion();
+                command = new OracleCommand("insert_escuela", connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.Add("v_id_escuela",OracleDbType.Varchar2).Value= escuela.NiT;
+                command.Parameters.Add("v_nombre_es",OracleDbType.Varchar2).Value=escuela.NombreEscuela;
+                command.Parameters.Add("v_direccion",OracleDbType.Varchar2).Value=escuela.Direccion;
+                command.Parameters.Add("v_telefono", OracleDbType.Varchar2).Value = escuela.Telefono;
+                command.Parameters.Add("v_correo", OracleDbType.Varchar2).Value = escuela.Correo;
+                command.ExecuteNonQuery();
+                cerrarBD();
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-
-                Console.WriteLine(e.Message);
                 return false;
             }
         }
-
-
         public List<Escuela> Leer()
         {
             try
             {
                 List<Escuela> ListEscuela = new List<Escuela>();
-                StreamReader sr = new StreamReader(ruta);
-                while (!sr.EndOfStream)
+                abrirBD();
+                connection = Miconexion();
+                command = new OracleCommand("select * from escuela", connection);
+                var raid = command.ExecuteReader();
+                while (raid.Read())
                 {
-                    ListEscuela.Add(Mapear(sr.ReadLine()));
+                    ListEscuela.Add(Mapear(raid));
                 }
-                sr.Close();
+                cerrarBD();
                 return ListEscuela;
-
             }
-            catch (Exception e)
+            catch (Exception)
             {
-
-                Console.WriteLine(e.Message);
+                return null;
             }
-            return null;
         }
-
-
-        public Escuela Mapear(string linea)
+        public Escuela Mapear(OracleDataReader linea)
         {
             var escuela = new Escuela
             {
-                NombreEscuela = linea.Trim().Split(';')[0],
-                Direccion = linea.Trim().Split(';')[1],
-                NiT = linea.Trim().Split(';')[2],
-                Telefono = linea.Trim().Split(';')[3],
-                Correo = linea.Trim().Split(';')[4]
+                NombreEscuela = linea.GetString(1),
+                Direccion = linea.GetString(2),
+                NiT = linea.GetString(0),
+                Telefono = linea.GetString(3),
+                Correo = linea.GetString(4),
             };
             return escuela;
         }
-
-
         public bool Eliminar(List<Escuela> ListEscuela)
         {
             bool estado;
@@ -91,7 +89,16 @@ namespace Datos
             }
             return estado;
         }
-
-
+        public Escuela buscarByname(string id)
+        {
+            foreach (var item in Leer())
+            {
+                if (item.NiT==(id))
+                {
+                    return item;
+                }
+            }
+            return null;    
+        }
     }
 }

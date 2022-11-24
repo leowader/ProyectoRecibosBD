@@ -32,7 +32,7 @@ namespace PresentacionGUI
         void Editar()
         {
             var escuela = new Escuela();
-            var escuelaOld = servicioEscuela.Buscar(Nit);
+            var escuelaOld = servicioEscuela.BuscarEscuela(Nit);
             escuela.NiT = txtNit.Text;
             escuela.NombreEscuela = txtNombre.Text;
             escuela.Direccion = txtDireccion.Text;

@@ -7,10 +7,10 @@ namespace Datos
     public class RepositorioRecibos:Archivos,ICrudDatos<Recibo>
     {
         bool Estado;
-        public RepositorioRecibos()
-        {
-            ruta = "Recibos.txt";
-        }
+        //public RepositorioRecibos()
+        //{
+        //    ruta = "Recibos.txt";
+        //}
 
 
         public bool Guardar(Recibo recibo)
@@ -65,7 +65,7 @@ namespace Datos
                 EstadoPago = Linea.Trim().Split(';')[6],
                 Observaciones = Linea.Trim().Split(';')[7],
                 Id = int.Parse(Linea.Trim().Split(';')[8]),
-                EscuelaRegistrada = Linea.Trim().Split(';')[9], 
+                idescuela = Linea.Trim().Split(';')[9], 
             };
 
             return recibo;

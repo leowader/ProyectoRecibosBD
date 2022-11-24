@@ -56,8 +56,8 @@ namespace PresentacionGUI
                 estudiante.curso = txtCurso.Text;
                 estudiante.Grado = txtGrado.Text;
                 estudiante.PeriodoEstudio = cbPeriodo.SelectedItem.ToString();
-
-                estudiante.EscuelaRegistrada = cbEscuela.SelectedItem.ToString();
+                var escuela = servicioEscuela.BuscarNombre(cbEscuela.SelectedItem.ToString());
+                estudiante.idescuela = (escuela.NiT.ToString());
                 var mensaje = servicioEstudiante.Actualizar(estudianteOld, estudiante);
                 var r = MessageBox.Show(mensaje, "Editar Estudiante", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (r == DialogResult.OK)

@@ -43,7 +43,7 @@ namespace PresentacionGUI
                 recibo.Observaciones = txtObservacion.Text;
                 recibo.EstadoPago = "PENDIENTE";
                 recibo.Id = int.Parse(GrillaSelect.Rows[indice].Cells[0].Value.ToString());
-                recibo.EscuelaRegistrada = GrillaSelect.Rows[indice].Cells[1].Value.ToString();
+                //recibo.EscuelaRegistrada = GrillaSelect.Rows[indice].Cells[1].Value.ToString();
                 var mensage = logicaRecibo.Guardar(recibo);
                 MessageBox.Show(mensage, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -88,7 +88,7 @@ namespace PresentacionGUI
                 {
                     if (item.TieneRecibo !=true)
                     {
-                        GrillaSelect.Rows.Add(item.Id, item.EscuelaRegistrada, item.Grado);
+                        //GrillaSelect.Rows.Add(item.Id, item.EscuelaRegistrada, item.Grado);
                     }     
                 }
             }

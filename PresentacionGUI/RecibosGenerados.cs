@@ -35,7 +35,7 @@ namespace PresentacionGUI
                 foreach (var item in ServicioRecibo.Mostrar())
                 {
 
-                    GrillaRecibosGenerados.Rows.Add(item.CodigoReferencia,item.Id,item.EscuelaRegistrada, item.Concepto, item.Cantidad, item.FechaLimite.ToShortDateString(), item.EstadoPago);
+                    GrillaRecibosGenerados.Rows.Add(item.CodigoReferencia,item.Id,item.idescuela, item.Concepto, item.Cantidad, item.FechaLimite.ToShortDateString(), item.EstadoPago);
                 }
             }
         }

@@ -65,7 +65,6 @@ namespace Logica
 
                     }
                 }
-                
             }
             catch (Exception e)
             {

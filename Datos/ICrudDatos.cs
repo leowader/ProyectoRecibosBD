@@ -11,7 +11,7 @@ namespace Datos
     {
         bool Guardar(Tipo tipo);
         List<Tipo> Leer();
-        Tipo Mapear(string linea);
+        //Tipo Mapear(string linea);
         bool Eliminar(List<Tipo> List);
     }
 }

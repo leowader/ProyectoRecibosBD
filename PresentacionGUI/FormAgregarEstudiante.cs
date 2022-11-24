@@ -15,34 +15,15 @@ namespace PresentacionGUI
     {
         FormAgregarEscuela formAgregar = new FormAgregarEscuela();
         ServicioEstudiante servicioEstudiante = new ServicioEstudiante();
+        ServicioEscuela ServicioEscuela = new ServicioEscuela();
         public FormAgregarEstudiante()
         {
             InitializeComponent();
-            //IdCreciente();
             Escuela();
         }
-        //public void IdCreciente()
-        //{
-        //    List<Estudiante> estudiantes;
-
-        //    estudiantes = servicioEstudiante.Mostrar();
-        //    if (servicioEstudiante.Mostrar() == null)
-        //    {
-        //        txtId.Text = "1";
-        //        txtId.Enabled = false;
-        //    }
-        //    else
-        //    {
-        //        int size = estudiantes.Count;
-        //        size += 1;
-        //        txtId.Text = size.ToString();
-        //        txtId.Enabled = false;
-        //    }
-        //}
 
         private void FormAgregarEstudiante_Load(object sender, EventArgs e)
         {
-            //formAgregar.OcultarAgregar();
         }
 
 
@@ -76,16 +57,13 @@ namespace PresentacionGUI
                     estudiante.curso = txtCurso.Text;
                     estudiante.Grado = txtGrado.Text;
                     estudiante.PeriodoEstudio = cbPeriodo.SelectedItem.ToString();
-                    estudiante.EscuelaRegistrada = cbEscuela.SelectedItem.ToString();
-                    estudiante.TieneRecibo = false;
+                    estudiante.codigoCurso = txtcodigoCurso.Text;
+                    estudiante.idescuela = cbEscuela.SelectedItem.ToString();
                     var mensaje = servicioEstudiante.Guardar(estudiante);
                     MessageBox.Show(mensaje.ToUpper(), "Regristro Estudiante", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //Limpiar(this, panelEstudiantes);
-                    //IdCreciente();
                 }
                 catch (Exception e)
                 {
-
                     MessageBox.Show(e.Message, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 
@@ -96,14 +74,9 @@ namespace PresentacionGUI
         ServicioEscuela servicioEscuela = new ServicioEscuela();
         public void Escuela()
         {
-            var EscuelaNombre = servicioEscuela.Mostrar();
-            if (EscuelaNombre != null)
-            {
-                foreach (var item in EscuelaNombre)
-                {
-                    cbEscuela.Items.Add(item.NombreEscuela);
-                }
-            }
+            cbEscuela.Items.Clear();
+            cbEscuela.DataSource = ServicioEscuela.Mostrar();
+            cbEscuela.DisplayMember = "NombreEscuela";
         }
         private void Limpiar(Control control, Panel group2)
         {
@@ -133,6 +106,7 @@ namespace PresentacionGUI
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar(this, panelEstudiantes);
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

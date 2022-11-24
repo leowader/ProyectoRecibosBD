@@ -32,10 +32,10 @@ namespace Logica
             try
             {
                 var estado= RutaEscuela.Guardar(escuela);
-                if (ListEscuelas != null)
-                {
-                    VerificarNit(escuela);
-                }
+                //if (ListEscuelas != null)
+                //{
+                //    VerificarNit(escuela);
+                //}
                 return estado ? "ESCUELA REGISTRADA" : "ERROR AL REGISTRAR LA ESCUELA";
             }
             catch (Exception e)
@@ -89,7 +89,7 @@ namespace Logica
         {
             try
             {
-                var Nit = Buscar(escuela.NiT);
+                var Nit = BuscarEscuela(escuela.NiT);
                 ListEscuelas.Remove(Nit);
                 var estado = RutaEscuela.Eliminar(ListEscuelas);
                 ActualizarList();
@@ -120,25 +120,9 @@ namespace Logica
         }
 
 
-        public Escuela Buscar(string Nit)
+        public Escuela BuscarEscuela(string nit)
         {
-            try
-            {
-                _ = new Escuela();
-                foreach (var item in ListEscuelas)
-                {
-                    if (item.NiT.Trim().Equals(Nit))
-                    {
-                        Escuela escuela = item;
-                        return escuela;
-                    }
-                }
-                return null;
-            }
-            catch (Exception e)
-            {
-                return e.Message + e.StackTrace;
-            }
+            return repositorioEscuela.buscarByname(nit);
         }
 
         public Escuela BuscarNombre(string Nombre)
@@ -148,7 +132,7 @@ namespace Logica
                 _ = new Escuela();
                 foreach (var item in ListEscuelas)
                 {
-                    if (item.NombreEscuela.Trim().Equals(Nombre.ToUpper()))
+                    if (item.NombreEscuela.Trim().Equals(Nombre))
                     {
                         Escuela escuela = item;
                         return escuela;
@@ -156,9 +140,9 @@ namespace Logica
                 }
                 return null;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                return e.Message + e.StackTrace;
+                return null;
             }
         }
 

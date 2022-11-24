@@ -31,7 +31,7 @@ namespace PresentacionGUI
                 foreach (var item in servicioEstudiante.Mostrar())
                 {
                     GrillaEstudiantes.Rows.Add(item.Id, item.Nombres, item.Apellidos, item.Sexo,
-                    item.curso,item.Grado, item.PeriodoEstudio, item.EscuelaRegistrada);
+                    item.curso,item.Grado, item.PeriodoEstudio, item.idescuela);
                 }
             }
 

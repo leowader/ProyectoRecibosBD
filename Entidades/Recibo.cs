@@ -30,7 +30,7 @@ namespace Entidades
         public override string ToString()
         {
             return $"{Concepto};{Cantidad};{CodigoReferencia};{FechaLimite}" +
-                $";{FechaExtraordinaria};{Banco};{EstadoPago};{Observaciones};{Id};{EscuelaRegistrada}"; 
+                $";{FechaExtraordinaria};{Banco};{EstadoPago};{Observaciones};{Id};{idescuela}"; 
         }
 
     }
