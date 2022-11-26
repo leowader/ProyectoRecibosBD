@@ -43,7 +43,7 @@ namespace PresentacionGUI
                 try
                 {
                     Estudiante estudiante = new Estudiante();
-                    estudiante.Id = int.Parse(txtId.Text);
+                    estudiante.Id =int.Parse(txtId.Text);
                     estudiante.Nombres = txtNombre.Text;
                     estudiante.Apellidos = txtApellidos.Text;
                     if (rdHombre.Checked)
@@ -69,8 +69,6 @@ namespace PresentacionGUI
                 
             }
         }
-
-
         ServicioEscuela servicioEscuela = new ServicioEscuela();
         public void Escuela()
         {

@@ -42,41 +42,57 @@ namespace Datos
             try
             {
                 List<Estudiante> listaEstudent = new List<Estudiante>();
-                StreamReader sr = new StreamReader(ruta);
-                while (!sr.EndOfStream)
+                abrirBD();
+                connection = Miconexion();
+                command = new OracleCommand("select * from estudiante", connection);
+                command.ExecuteNonQuery();
+                var raid = command.ExecuteReader();
+                while (raid.Read())
                 {
-                    listaEstudent.Add(Mapear(sr.ReadLine()));
+                    listaEstudent.Add(Mapear(raid));
                 }
-                sr.Close();
+                cerrarBD();
                 return listaEstudent;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Console.WriteLine(e.Message);
-                
+                return null;
             }
-            return null;
+
         }
-
-
-        public Estudiante Mapear(string linea)
+        //public string todo()
+        //{
+        //    try
+        //    {
+        //        List<Estudiante> listaEstudent = new List<Estudiante>();
+        //        abrirBD();
+        //        connection = Miconexion();
+        //        command = new OracleCommand("select * from estudiante", connection);
+        //        var raid = command.ExecuteReader();
+        //        while (raid.Read())
+        //        {
+        //            listaEstudent.Add(Mapear(raid));
+        //        }
+        //        cerrarBD();
+        //        return "ok";
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return e.Message;
+        //    }
+        //}
+        public Estudiante Mapear(OracleDataReader linea)
         {
-            var estudiante = new Estudiante
-            {
-                //Nombres = linea.Trim().Split(';')[0],
-                //Apellidos = linea.Trim().Split(';')[1],
-                //Sexo = char.Parse(linea.Trim().Split(';')[2]),
-                //Id = int.Parse(linea.Trim().Split(';')[3]),
-                //curso = linea.Trim().Split(';')[4],
-                //Grado = linea.Trim().Split(';')[5],
-                //PeriodoEstudio = linea.Trim().Split(';')[6],
-                //idescuela = linea.Trim().Split(';')[7],
-                //TieneRecibo = bool.Parse(linea.Trim().Split(';')[8]),
-            };
+            var estudiante = new Estudiante();
+            estudiante.Id = int.Parse(linea.GetString(0));
+            estudiante.Nombres = linea.GetString(1);
+            estudiante.Apellidos = linea.GetString(2);
+            estudiante.Sexo = char.Parse(linea.GetString(3));
+            estudiante.PeriodoEstudio = linea.GetString(4);
+            estudiante.idescuela = linea.GetString(5);
+            estudiante.codigoCurso = linea.GetString(6);
             return estudiante;
         }
-
-
         public bool Eliminar(List<Estudiante>estudiantes)
         {
             bool estado;

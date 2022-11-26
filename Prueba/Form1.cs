@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace Prueba
             InitializeComponent();
         }
         Datos.RepositorioEscuela RepositorioEscuela = new Datos.RepositorioEscuela();
+        RepositorioEstudiantes RepositorioEstudiantes = new RepositorioEstudiantes();
         private void btnconectar_Click(object sender, EventArgs e)
         {
             var estado = RepositorioEscuela.abrirBD();
@@ -24,7 +26,13 @@ namespace Prueba
         }
         void cargar()
         {
-            grillaescuela.DataSource = RepositorioEscuela.Leer();
+            var veri = RepositorioEstudiantes.Leer();
+            if (veri==null)
+            {
+                MessageBox.Show("vacio");
+            }
+            grillaescuela.DataSource = RepositorioEstudiantes.Leer();
+            //grillaescuela.DataSource = RepositorioEscuela.Leer();
         }
 
         private void Form1_Load(object sender, EventArgs e)

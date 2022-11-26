@@ -64,7 +64,7 @@ namespace Datos
                 Banco = Linea.Trim().Split(';')[5],
                 EstadoPago = Linea.Trim().Split(';')[6],
                 Observaciones = Linea.Trim().Split(';')[7],
-                Id = int.Parse(Linea.Trim().Split(';')[8]),
+                //Id = int.Parse(Linea.Trim().Split(';')[8]),
                 idescuela = Linea.Trim().Split(';')[9], 
             };
 
