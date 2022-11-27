@@ -26,7 +26,7 @@ namespace PresentacionGUI
         {
             Guardar();
             TieneRecibo();
-            GenerarRecibo();
+            //GenerarRecibo();
             CargarGrilla();
         }
         void Guardar()
@@ -86,10 +86,10 @@ namespace PresentacionGUI
                 GrillaSelect.Rows.Clear();
                 foreach (var item in estudiantes.Mostrar())
                 {
-                    if (item.TieneRecibo !=true)
+                    if (item.TieneRecibo.Equals('N'))
                     {
-                        //GrillaSelect.Rows.Add(item.Id, item.EscuelaRegistrada, item.Grado);
-                    }     
+                        GrillaSelect.Rows.Add(item.Id, item.idescuela, item.codigoCurso);
+                    }
                 }
             }
         }
@@ -126,8 +126,8 @@ namespace PresentacionGUI
         public void TieneRecibo()
         {
             var estudiantes1 = BuscarEstudiante();
-            estudiantes1.TieneRecibo = true;
-            estudiantes.Actualizar(BuscarEstudiante(),estudiantes1);
+            estudiantes1.TieneRecibo = 'S';
+            estudiantes.Actualizar(estudiantes1);
 
         }
         public Entidades.Escuela BuscarEscuela()
@@ -148,7 +148,6 @@ namespace PresentacionGUI
             InfoRecibo.FechaExtraordinaria = DateTime.Parse(DateExtra.Value.ToString());
             return InfoRecibo;
         }
-
         private void GrillaSelect_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indice = e.RowIndex;

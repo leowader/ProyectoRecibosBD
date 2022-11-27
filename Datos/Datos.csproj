@@ -82,6 +82,7 @@
     <Compile Include="RepositorioEstudiantes.cs" />
     <Compile Include="RepositorioLogin.cs" />
     <Compile Include="RepositorioRecibos.cs" />
+    <Compile Include="ViewRecibos.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">

@@ -19,8 +19,6 @@ namespace Logica
         {
             ListaRecibos = RutaRecibos.Leer();
         }
-
-
         public string Guardar(Recibo estudiante)
         {
             try
@@ -45,7 +43,7 @@ namespace Logica
         public string Eliminar(Recibo recibo)
         {
             ListaRecibos.Remove(recibo);
-            var estado = RutaRecibos.Eliminar(ListaRecibos);
+            var estado = RutaRecibos.Eliminar(recibo);
             ActualizarLit();
             return estado ? "INFORMACION DE RECIBO ELIMINADA" : "ERROR AL ELIMINAR LA INFORMACION DEL RECIBO";
         }

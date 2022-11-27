@@ -50,6 +50,7 @@
     <Compile Include="ServicioEstudiante.cs" />
     <Compile Include="ServicioLogin.cs" />
     <Compile Include="ServicioRecibo.cs" />
+    <Compile Include="ServicioView.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">

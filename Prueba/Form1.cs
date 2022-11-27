@@ -19,6 +19,7 @@ namespace Prueba
         }
         Datos.RepositorioEscuela RepositorioEscuela = new Datos.RepositorioEscuela();
         RepositorioEstudiantes RepositorioEstudiantes = new RepositorioEstudiantes();
+        ViewRecibos ViewRecibos = new ViewRecibos();
         private void btnconectar_Click(object sender, EventArgs e)
         {
             var estado = RepositorioEscuela.abrirBD();
@@ -26,12 +27,13 @@ namespace Prueba
         }
         void cargar()
         {
-            var veri = RepositorioEstudiantes.Leer();
-            if (veri==null)
-            {
-                MessageBox.Show("vacio");
-            }
-            grillaescuela.DataSource = RepositorioEstudiantes.Leer();
+            //var veri = RepositorioEstudiantes.todo();
+            //MessageBox.Show(veri);
+            //if (veri==null)
+            //{
+               
+            //}
+            grillaescuela.DataSource = ViewRecibos.Leer();
             //grillaescuela.DataSource = RepositorioEscuela.Leer();
         }
 

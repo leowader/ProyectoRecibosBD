@@ -21,7 +21,7 @@ namespace PresentacionGUI
         ServicioRecibo ServicioRecibo=new ServicioRecibo();
         Logica.ServicioRecibo logicaRecibo = new Logica.ServicioRecibo();
         Logica.ServicioEstudiante estudiantes = new ServicioEstudiante();
-
+        ServicioView ServicioView = new ServicioView();
         ServicioEscuela serviceEscuela = new ServicioEscuela();
         void cargarGrilla()
         {
@@ -32,10 +32,11 @@ namespace PresentacionGUI
             else
             {
                 GrillaRecibosGenerados.Rows.Clear();
-                foreach (var item in ServicioRecibo.Mostrar())
+                foreach (var item in ServicioView.Mostrar())
                 {
 
-                    GrillaRecibosGenerados.Rows.Add(item.CodigoReferencia,item.Id,item.idescuela, item.Concepto, item.Cantidad, item.FechaLimite.ToShortDateString(), item.EstadoPago);
+                    GrillaRecibosGenerados.Rows.Add(item.CodigoReferencia,item.idEstudiante,item.nombre, item.Concepto, item.valor,
+                    item.FechaLimite.ToShortDateString(), item.EstadoPago);
                 }
             }
         }

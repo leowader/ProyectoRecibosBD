@@ -13,7 +13,6 @@ namespace Datos
     {
         OracleConnection connection;
         OracleCommand command;
-
         public bool Guardar(Escuela escuela)
         {
             try

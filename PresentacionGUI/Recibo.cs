@@ -48,7 +48,7 @@ namespace PresentacionGUI
             labelValor.Text = recibo.Cantidad.ToString();
             labelId.Text = ReciboEstudiante.Id.ToString();
             labelNitEsc.Text = escuela.NiT.ToString();
-            labeLtelefono.Text=escuela.NiT.ToString();
+            labeLtelefono.Text = escuela.NiT.ToString();
             labelImpresion.Text = DateTime.UtcNow.ToShortDateString().ToString();
             labelnit2.Text = escuela.NiT.ToString();
             labelcedula2.Text = ReciboEstudiante.Id.ToString();
@@ -59,7 +59,6 @@ namespace PresentacionGUI
             labelRefe2.Text = recibo.CodigoReferencia.ToString();
             labelPer2.Text = ReciboEstudiante.PeriodoEstudio.ToString();
             labelfecha3.Text = recibo.FechaLimite.ToShortDateString().ToString();
-
         }
 
         private void Recibo_Load(object sender, EventArgs e)

@@ -74,22 +74,21 @@ namespace Logica
         }
 
 
-        public string Actualizar(Estudiante estudiante, Estudiante estudianteActualizado)
+        public string Actualizar(Estudiante estudiante)
         {
-            Eliminar(estudiante);
-            Guardar(estudianteActualizado);
+            repositorioEstudiantes.actualizar(estudiante);
             ActualizarLit();
-            return "ESTUDIANTE ACTUALIZADO";
+            return $"ESTUDIANTE ACTUALIZADO:{estudiante.Nombres}";
         }
 
 
         public string Eliminar(Estudiante estudiante)
         {
-            var Id = Buscar(estudiante.Id);
-            ListaEstudiantes.Remove(Id);
-            var estado = RutaEstudiantes.Eliminar(ListaEstudiantes);
+            //var estudianteEncon = Buscar(estudiante.Id);
+            ListaEstudiantes.Remove(estudiante);
+            var estado = RutaEstudiantes.Eliminar(estudiante);
             ActualizarLit();
-            return estado ?"ESTUDIANTE ELIMINADO":"ERROR AL ELIMINAR EL ETUDIANTE";
+            return estado ?$"ESTUDIANTE ELIMINADO{estudiante.Nombres}":"ERROR AL ELIMINAR EL ETUDIANTE";
         }
 
 

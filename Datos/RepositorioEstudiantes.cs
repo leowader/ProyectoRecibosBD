@@ -60,27 +60,27 @@ namespace Datos
             }
 
         }
-        //public string todo()
-        //{
-        //    try
-        //    {
-        //        List<Estudiante> listaEstudent = new List<Estudiante>();
-        //        abrirBD();
-        //        connection = Miconexion();
-        //        command = new OracleCommand("select * from estudiante", connection);
-        //        var raid = command.ExecuteReader();
-        //        while (raid.Read())
-        //        {
-        //            listaEstudent.Add(Mapear(raid));
-        //        }
-        //        cerrarBD();
-        //        return "ok";
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return e.Message;
-        //    }
-        //}
+        public string todo()
+        {
+            try
+            {
+                List<Estudiante> listaEstudent = new List<Estudiante>();
+                abrirBD();
+                connection = Miconexion();
+                command = new OracleCommand("select * from estudiante", connection);
+                var raid = command.ExecuteReader();
+                while (raid.Read())
+                {
+                    listaEstudent.Add(Mapear(raid));
+                }
+                cerrarBD();
+                return "ok";
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
+        }
         public Estudiante Mapear(OracleDataReader linea)
         {
             var estudiante = new Estudiante();
@@ -91,27 +91,42 @@ namespace Datos
             estudiante.PeriodoEstudio = linea.GetString(4);
             estudiante.idescuela = linea.GetString(5);
             estudiante.codigoCurso = linea.GetString(6);
+            estudiante.TieneRecibo = char.Parse(linea.GetString(7));
             return estudiante;
         }
-        public bool Eliminar(List<Estudiante>estudiantes)
+        public bool Eliminar(Estudiante estudiante)
         {
             bool estado;
             try
             {
-                StreamWriter sw = new StreamWriter(ruta, false);
-                foreach (var item in estudiantes)
-                {
-                    sw.WriteLine(item.ToString());
-                }
-                sw.Close();
+                abrirBD();
+                connection = Miconexion();
+                command = new OracleCommand("eliminar_estudiante",connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.Add("v_id",OracleDbType.Varchar2).Value=estudiante.Id;
+                command.ExecuteNonQuery();
+                cerrarBD();
                 return estado=true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 estado=false;
-                Console.WriteLine(e.Message);
             }
             return estado;
+        }
+        public bool actualizar(Estudiante estudiante)
+        {
+            abrirBD();
+            connection = Miconexion();
+            command = new OracleCommand("atualizar_estudiante", connection);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            command.Parameters.Add("v_id", OracleDbType.Varchar2).Value = estudiante.Id;
+            command.Parameters.Add("v_grado", OracleDbType.Varchar2).Value = estudiante.codigoCurso;
+            command.Parameters.Add("v_periodo", OracleDbType.Varchar2).Value = estudiante.PeriodoEstudio;
+            command.ExecuteNonQuery();
+            cerrarBD();
+            return true;
+
         }
 
 

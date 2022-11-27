@@ -31,7 +31,7 @@ namespace PresentacionGUI
                 foreach (var item in servicioEstudiante.Mostrar())
                 {
                     GrillaEstudiantes.Rows.Add(item.Id, item.Nombres, item.Apellidos, item.Sexo,
-                    item.curso,item.Grado, item.PeriodoEstudio, item.idescuela);
+                    item.codigoCurso,item.Grado, item.PeriodoEstudio, item.idescuela);
                 }
             }
 
@@ -62,8 +62,8 @@ namespace PresentacionGUI
                 formEditarEstudiante.rdMujer.Checked = true;
             }
             
-            formEditarEstudiante.txtCurso.Text = GrillaEstudiantes.CurrentRow.Cells[4].Value.ToString();
-            formEditarEstudiante.txtGrado.Text = GrillaEstudiantes.CurrentRow.Cells[5].Value.ToString();
+            //formEditarEstudiante.txtCurso.Text = GrillaEstudiantes.CurrentRow.Cells[4].Value.ToString();
+            //formEditarEstudiante.txtGrado.Text = GrillaEstudiantes.CurrentRow.Cells[5].Value.ToString();
             formEditarEstudiante.cbPeriodo.Text = GrillaEstudiantes.CurrentRow.Cells[6].Value.ToString();
             formEditarEstudiante.cbEscuela.Text = GrillaEstudiantes.CurrentRow.Cells[7].Value.ToString();
             formEditarEstudiante.ShowDialog();

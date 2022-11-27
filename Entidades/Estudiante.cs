@@ -18,7 +18,7 @@ namespace Entidades
         public string Grado { get; set; }
         public string PeriodoEstudio { get; set; }
         public string idescuela { get; set; }
-        public bool TieneRecibo { get; set; }
+        public char TieneRecibo { get; set; }
         public string codigoCurso { get; set; }
         public Escuela Escuela { get; set; }
         public override string ToString()
