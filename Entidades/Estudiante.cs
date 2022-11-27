@@ -9,10 +9,8 @@ namespace Entidades
 {
     public class Estudiante : Persona
     {
-
         public Estudiante()
         {
-
         }
         public string curso { get; set; }
         public string Grado { get; set; }

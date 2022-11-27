@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Datos
 {
     public class RepositorioEscuela:Archivos,ICrudDatos<Escuela>
@@ -68,23 +67,16 @@ namespace Datos
             };
             return escuela;
         }
-        public bool Eliminar(List<Escuela> ListEscuela)
+        public bool Eliminar(Escuela ListEscuela)
         {
             bool estado;
             try
             {
-                StreamWriter sw = new StreamWriter(ruta, false);
-                foreach (var item in ListEscuela)
-                {
-                    sw.WriteLine(item.ToString());
-                }
-                sw.Close();
                 return estado = true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 estado = false;
-                Console.WriteLine(e.Message);
             }
             return estado;
         }
@@ -98,6 +90,10 @@ namespace Datos
                 }
             }
             return null;    
+        }
+        public bool Actualizar(Escuela tipo)
+        {
+            throw new NotImplementedException();
         }
     }
 }

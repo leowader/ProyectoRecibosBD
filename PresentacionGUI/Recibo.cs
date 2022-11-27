@@ -21,7 +21,7 @@ namespace PresentacionGUI
             InitializeComponent();
             
         }
-        
+     
         public void mostrarEscuela()
         {
             var lista=ServicioEscuela.Mostrar();

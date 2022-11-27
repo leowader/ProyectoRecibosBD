@@ -11,7 +11,6 @@ namespace Entidades
         public Escuela()
         {
         }
-
         public Escuela(string nombreEscuela, string direccion, string niT, string telefono, string correo)
         {
             NombreEscuela = nombreEscuela;
@@ -20,7 +19,6 @@ namespace Entidades
             Telefono = telefono;
             Correo = correo;
         }
-
         public string NombreEscuela { get; set; }
         public string Direccion { get; set; }
         public string NiT { get; set; }

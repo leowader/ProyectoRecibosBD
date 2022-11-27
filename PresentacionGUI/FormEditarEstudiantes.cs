@@ -27,7 +27,6 @@ namespace PresentacionGUI
                 cbEscuela.Items.Add(item.NombreEscuela);
             }
         }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Editar();

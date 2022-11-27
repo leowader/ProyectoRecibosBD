@@ -17,14 +17,10 @@ namespace Logica
         {
             ListUsuarios = Rutalogin.Leer();
         }
-
-
         public void ActualizarList()
         {
             ListUsuarios = Rutalogin.Leer();
         }
-
-
         public string Guardar(Login usuario)
         {
             try
@@ -38,7 +34,6 @@ namespace Logica
             }
             catch (Exception e)
             {
-
                 return e.Message + e.StackTrace;
             }
         }
@@ -56,11 +51,9 @@ namespace Logica
 
                     }
                 }
-
             }
             catch (Exception e)
             {
-
                 return e.Message;
             }
             return estado;

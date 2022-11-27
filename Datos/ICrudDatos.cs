@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Oracle.ManagedDataAccess.Client;
 namespace Datos
 {
     public interface ICrudDatos<Tipo>
     {
         bool Guardar(Tipo tipo);
         List<Tipo> Leer();
-        //Tipo Mapear(string linea);
-        //bool Eliminar(List<Tipo> List);
+        bool Actualizar(Tipo tipo);
+        Tipo Mapear(OracleDataReader linea);
+        bool Eliminar(Tipo tipo);
     }
 }

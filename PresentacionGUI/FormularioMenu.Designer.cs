@@ -409,7 +409,6 @@
             this.Name = "FormularioMenu";
             this.Text = "Generador de recibos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormularioMenu_FormClosed);
-            this.Load += new System.EventHandler(this.FormularioMenu_Load);
             this.panelLateralMenu.ResumeLayout(false);
             this.panelMenuRecibo.ResumeLayout(false);
             this.panelAlumnoSubMenu.ResumeLayout(false);

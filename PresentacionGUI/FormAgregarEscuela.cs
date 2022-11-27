@@ -20,8 +20,6 @@ namespace PresentacionGUI
             InitializeComponent();
             txtTelefono.MaxLength = 10;
         }
-
-
         void Guardar()
         {
             if (txtNit.Text == ""||txtNombre.Text == ""||txtDireccion.Text == ""||txtTelefono.Text == ""||txtCorreo.Text == "")
@@ -45,34 +43,17 @@ namespace PresentacionGUI
                 {
                     MessageBox.Show(e.Message, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
             }
         }
-
-
         private void FormAgregarFamiliar_Load(object sender, EventArgs e)
         {
-            //OcultarAgregar();
 
         }
-
-        //public void OcultarAgregar()
-        //{
-        //    if (txtNit.Text != "")
-        //    {
-        //        btnAgregar.Enabled = true;
-        //    }
-        //    else
-        //    {
-        //        btnAgregar.Enabled = false;
-        //    }
-        //}
 
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             SoloNumeros(e);
         }
-
         public void SoloNumeros(KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
@@ -82,7 +63,6 @@ namespace PresentacionGUI
                 return;
             }
         }
-
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (SoloLetras(e.KeyChar) == false)
@@ -90,7 +70,6 @@ namespace PresentacionGUI
                 MessageBox.Show("Solo se permiten Letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
             }
-
         }
 
         public bool SoloLetras(char e)
@@ -104,39 +83,18 @@ namespace PresentacionGUI
                 return false;
             }
         }
-
-        //private void Limpiar(Control control, GroupBox group2)
-        //{
-        //    foreach (var txt in group2.Controls)
-        //    {
-        //        if (txt is TextBox)
-        //        {
-        //            ((TextBox)txt).Clear();
-        //        }
-        //        else if (txt is DateTimePicker)
-        //        {
-        //            ((DateTimePicker)txt).Value = DateTime.Now;
-        //        }
-        //    }
-        //}
-
-
-
         private void txtNit_KeyPress(object sender, KeyPressEventArgs e)
         {
             SoloNumeros(e);
         }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Guardar();
         }
-
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar(this, panelEscuelas);
         }
-
         private void Limpiar(Control control, Panel panel)
         {
             foreach(var txt in panel.Controls)
@@ -147,7 +105,6 @@ namespace PresentacionGUI
                 }
             }
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();

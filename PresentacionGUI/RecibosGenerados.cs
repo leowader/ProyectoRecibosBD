@@ -21,7 +21,6 @@ namespace PresentacionGUI
         ServicioRecibo ServicioRecibo=new ServicioRecibo();
         Logica.ServicioRecibo logicaRecibo = new Logica.ServicioRecibo();
         Logica.ServicioEstudiante estudiantes = new ServicioEstudiante();
-        ServicioView ServicioView = new ServicioView();
         ServicioEscuela serviceEscuela = new ServicioEscuela();
         void cargarGrilla()
         {
@@ -58,8 +57,8 @@ namespace PresentacionGUI
             var estado=estadoRecibo.Estado(recibo2.CodigoReferencia);
             if (estado !=true)
             {
-                recibo2.EstadoPago = "PAGADO";
-                ServicioRecibo.Actualizar(BuscarRecibo(), recibo2);
+                recibo2.EstadoPago = "pagado";
+                ServicioRecibo.Actualizar(recibo2);
             }
             else
             {

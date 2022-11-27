@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAgregarEstudiante));
             this.panelFondo = new System.Windows.Forms.Panel();
             this.panelEstudiantes = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtcodigoCurso = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtGrado = new System.Windows.Forms.TextBox();
@@ -55,8 +57,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtcodigoCurso = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.panelFondo.SuspendLayout();
             this.panelEstudiantes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -83,8 +83,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelEstudiantes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panelEstudiantes.Controls.Add(this.label9);
-            this.panelEstudiantes.Controls.Add(this.txtcodigoCurso);
             this.panelEstudiantes.Controls.Add(this.pictureBox3);
+            this.panelEstudiantes.Controls.Add(this.txtcodigoCurso);
             this.panelEstudiantes.Controls.Add(this.pictureBox2);
             this.panelEstudiantes.Controls.Add(this.txtGrado);
             this.panelEstudiantes.Controls.Add(this.label8);
@@ -110,6 +110,26 @@
             this.panelEstudiantes.Size = new System.Drawing.Size(666, 398);
             this.panelEstudiantes.TabIndex = 0;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label9.Location = new System.Drawing.Point(292, 215);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 13);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "Codigo Curso";
+            // 
+            // txtcodigoCurso
+            // 
+            this.txtcodigoCurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.txtcodigoCurso.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtcodigoCurso.ForeColor = System.Drawing.SystemColors.Menu;
+            this.txtcodigoCurso.Location = new System.Drawing.Point(295, 231);
+            this.txtcodigoCurso.Name = "txtcodigoCurso";
+            this.txtcodigoCurso.Size = new System.Drawing.Size(88, 13);
+            this.txtcodigoCurso.TabIndex = 40;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -133,7 +153,7 @@
             this.txtGrado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.txtGrado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtGrado.ForeColor = System.Drawing.SystemColors.Menu;
-            this.txtGrado.Location = new System.Drawing.Point(282, 271);
+            this.txtGrado.Location = new System.Drawing.Point(295, 271);
             this.txtGrado.Name = "txtGrado";
             this.txtGrado.Size = new System.Drawing.Size(88, 13);
             this.txtGrado.TabIndex = 37;
@@ -142,7 +162,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(228, 271);
+            this.label8.Location = new System.Drawing.Point(244, 271);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 13);
             this.label8.TabIndex = 36;
@@ -207,7 +227,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(228, 315);
+            this.label7.Location = new System.Drawing.Point(244, 315);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 13);
             this.label7.TabIndex = 32;
@@ -233,7 +253,7 @@
             this.cbEscuela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbEscuela.ForeColor = System.Drawing.Color.Black;
             this.cbEscuela.FormattingEnabled = true;
-            this.cbEscuela.Location = new System.Drawing.Point(282, 307);
+            this.cbEscuela.Location = new System.Drawing.Point(295, 312);
             this.cbEscuela.Name = "cbEscuela";
             this.cbEscuela.Size = new System.Drawing.Size(88, 21);
             this.cbEscuela.TabIndex = 31;
@@ -289,7 +309,7 @@
             // 
             this.rdMujer.AutoSize = true;
             this.rdMujer.ForeColor = System.Drawing.SystemColors.Control;
-            this.rdMujer.Location = new System.Drawing.Point(192, 225);
+            this.rdMujer.Location = new System.Drawing.Point(177, 227);
             this.rdMujer.Name = "rdMujer";
             this.rdMujer.Size = new System.Drawing.Size(51, 17);
             this.rdMujer.TabIndex = 26;
@@ -326,7 +346,7 @@
             this.txtApellidos.ForeColor = System.Drawing.SystemColors.Menu;
             this.txtApellidos.Location = new System.Drawing.Point(109, 189);
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(201, 13);
+            this.txtApellidos.Size = new System.Drawing.Size(164, 13);
             this.txtApellidos.TabIndex = 23;
             // 
             // txtNombre
@@ -336,7 +356,7 @@
             this.txtNombre.ForeColor = System.Drawing.SystemColors.Menu;
             this.txtNombre.Location = new System.Drawing.Point(109, 146);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(201, 13);
+            this.txtNombre.Size = new System.Drawing.Size(164, 13);
             this.txtNombre.TabIndex = 22;
             // 
             // txtId
@@ -346,7 +366,7 @@
             this.txtId.ForeColor = System.Drawing.SystemColors.Menu;
             this.txtId.Location = new System.Drawing.Point(109, 106);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(201, 13);
+            this.txtId.Size = new System.Drawing.Size(164, 13);
             this.txtId.TabIndex = 21;
             // 
             // label3
@@ -379,26 +399,6 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "ID";
             // 
-            // txtcodigoCurso
-            // 
-            this.txtcodigoCurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.txtcodigoCurso.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtcodigoCurso.ForeColor = System.Drawing.SystemColors.Menu;
-            this.txtcodigoCurso.Location = new System.Drawing.Point(282, 242);
-            this.txtcodigoCurso.Name = "txtcodigoCurso";
-            this.txtcodigoCurso.Size = new System.Drawing.Size(88, 13);
-            this.txtcodigoCurso.TabIndex = 40;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(279, 226);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 13);
-            this.label9.TabIndex = 41;
-            this.label9.Text = "Codigo Curso";
-            // 
             // FormAgregarEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,7 +407,6 @@
             this.Controls.Add(this.panelFondo);
             this.Name = "FormAgregarEstudiante";
             this.Text = "FormAgregarEstudiante";
-            this.Load += new System.EventHandler(this.FormAgregarEstudiante_Load);
             this.panelFondo.ResumeLayout(false);
             this.panelEstudiantes.ResumeLayout(false);
             this.panelEstudiantes.PerformLayout();

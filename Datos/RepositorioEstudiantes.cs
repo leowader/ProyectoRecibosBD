@@ -58,7 +58,6 @@ namespace Datos
             {
                 return null;
             }
-
         }
         public string todo()
         {
@@ -114,21 +113,38 @@ namespace Datos
             }
             return estado;
         }
-        public bool actualizar(Estudiante estudiante)
+        public bool Actualizar(Estudiante estudiante)
+        {
+            try
+            {
+                abrirBD();
+                connection = Miconexion();
+                command = new OracleCommand("atualizar_estudiante", connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.Add("v_id", OracleDbType.Varchar2).Value = estudiante.Id;
+                command.Parameters.Add("v_grado", OracleDbType.Varchar2).Value = estudiante.codigoCurso;
+                command.Parameters.Add("v_periodo", OracleDbType.Varchar2).Value = estudiante.PeriodoEstudio;
+                command.ExecuteNonQuery();
+                cerrarBD();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+        public bool upd(Estudiante estudiante)
         {
             abrirBD();
             connection = Miconexion();
-            command = new OracleCommand("atualizar_estudiante", connection);
+            command = new OracleCommand("atualizar_estuTiRecibo", connection);
             command.CommandType = System.Data.CommandType.StoredProcedure;
             command.Parameters.Add("v_id", OracleDbType.Varchar2).Value = estudiante.Id;
-            command.Parameters.Add("v_grado", OracleDbType.Varchar2).Value = estudiante.codigoCurso;
-            command.Parameters.Add("v_periodo", OracleDbType.Varchar2).Value = estudiante.PeriodoEstudio;
+            command.Parameters.Add("v_tienerecibo", OracleDbType.Char).Value =estudiante.TieneRecibo;
             command.ExecuteNonQuery();
             cerrarBD();
             return true;
-
         }
-
-
     }
 }

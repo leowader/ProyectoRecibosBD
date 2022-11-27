@@ -30,8 +30,6 @@ namespace Datos
                 return false;
             }
         }
-
-
         public List<Login> Leer()
         {
             try
@@ -53,8 +51,6 @@ namespace Datos
             }
             return null;
         }
-
-
         public Login Mapear(string linea)
         {
             var usuario=new Login();

@@ -14,15 +14,13 @@ namespace Logica
         bool estadoDeuda;
         public bool Estado(string Referencia)
         {
-            
             foreach (var item in repositorio.Leer())
             {
-                if (item.CodigoReferencia.Equals(Referencia)&&item.EstadoPago.Equals("PAGADO"))
+                if (item.CodigoReferencia.Equals(Referencia)&&item.EstadoPago.Equals("pagado"))
                 {
                     estadoDeuda = true; 
                 }
             }
-            
             return estadoDeuda;
         }
     }

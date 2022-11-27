@@ -16,30 +16,23 @@ namespace Logica
         {
             ListaEstudiantes = RutaEstudiantes.Leer();
         }
-
-
         public void ActualizarLit()
         {
             ListaEstudiantes = RutaEstudiantes.Leer();
         }
-
-
         public List<Estudiante> Mostrar()
         {
             return repositorioEstudiantes.Leer();
         }
-
         public string Guardar(Estudiante estudiante)
         {
             try
             {
-
                 var estado = RutaEstudiantes.Guardar(estudiante);
                 if (ListaEstudiantes != null)
                 {
                     VerificarId(estudiante);
                 }
-                
                 return estado ? $"ESTUDIANTE GUARDADO CON NOMBRE: {estudiante.Nombres}" :
                 $"ERROR AL GUARDAR EL ESTDIANTE :{estudiante.Nombres.ToUpper()}";
             }
@@ -47,51 +40,44 @@ namespace Logica
             {
                 return e.Message;
             }
-
         }
-
         public string VerificarId(Estudiante estudiante)
         {
             string estado = "No";
             try
-            {
-                
+            {  
                 foreach (var item in ListaEstudiantes)
                 {
                     if (estudiante.Id.Equals(item.Id))
                     {
                         estado = "Si";
-
                     }
                 }
             }
             catch (Exception e)
             {
-
                 return e.Message;
             }
             return estado;
         }
-
-
         public string Actualizar(Estudiante estudiante)
         {
-            repositorioEstudiantes.actualizar(estudiante);
+            repositorioEstudiantes.Actualizar(estudiante);
             ActualizarLit();
             return $"ESTUDIANTE ACTUALIZADO:{estudiante.Nombres}";
         }
-
-
+        public void upd(Estudiante estudiante)
+        {
+            repositorioEstudiantes.upd(estudiante);
+            ActualizarLit();
+        }
         public string Eliminar(Estudiante estudiante)
         {
-            //var estudianteEncon = Buscar(estudiante.Id);
             ListaEstudiantes.Remove(estudiante);
             var estado = RutaEstudiantes.Eliminar(estudiante);
             ActualizarLit();
             return estado ?$"ESTUDIANTE ELIMINADO{estudiante.Nombres}":"ERROR AL ELIMINAR EL ETUDIANTE";
         }
-
-
         public Estudiante Buscar(int id)
         {
             _ = new Estudiante();
@@ -105,6 +91,5 @@ namespace Logica
             }
             return null;
         }
-        
     }
 }

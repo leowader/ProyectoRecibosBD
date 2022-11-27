@@ -9,13 +9,11 @@ namespace Entidades
 {
     public class Recibo:Estudiante
     {
-
         public string Concepto { get; set; }
         public double Cantidad { get; set; }
         public string CodigoReferencia { get; set; }
         public DateTime FechaLimite { get; set; }
         public DateTime FechaExtraordinaria { get; set; }
-
         public string Banco { get; set; }
         public String EstadoPago { get; set; }
         public string Observaciones { get; set; }
@@ -32,6 +30,5 @@ namespace Entidades
             return $"{Concepto};{Cantidad};{CodigoReferencia};{FechaLimite}" +
                 $";{FechaExtraordinaria};{Banco};{EstadoPago};{Observaciones};{Id};{idescuela}"; 
         }
-
     }
 }

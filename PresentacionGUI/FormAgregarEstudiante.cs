@@ -22,16 +22,10 @@ namespace PresentacionGUI
             Escuela();
         }
 
-        private void FormAgregarEstudiante_Load(object sender, EventArgs e)
-        {
-        }
-
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Guardar();
         }
-
         void Guardar()
         {
             if (txtId.Text==""||txtNombre.Text==""||txtApellidos.Text==""||txtCurso.Text==""||cbPeriodo.Text==""||cbEscuela.Text=="")
@@ -66,7 +60,6 @@ namespace PresentacionGUI
                 {
                     MessageBox.Show(e.Message, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                
             }
         }
         ServicioEscuela servicioEscuela = new ServicioEscuela();
@@ -90,23 +83,18 @@ namespace PresentacionGUI
                 }
             }
         }
-
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             formAgregar.SoloLetras(e.KeyChar);
         }
-
         private void txtApellidos_KeyPress(object sender, KeyPressEventArgs e)
         {
             formAgregar.SoloLetras(e.KeyChar);
         }
-
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar(this, panelEstudiantes);
-            
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();

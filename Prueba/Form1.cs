@@ -19,7 +19,7 @@ namespace Prueba
         }
         Datos.RepositorioEscuela RepositorioEscuela = new Datos.RepositorioEscuela();
         RepositorioEstudiantes RepositorioEstudiantes = new RepositorioEstudiantes();
-        ViewRecibos ViewRecibos = new ViewRecibos();
+        RepositorioRecibos RepositorioRecibos= new RepositorioRecibos();
         private void btnconectar_Click(object sender, EventArgs e)
         {
             var estado = RepositorioEscuela.abrirBD();
@@ -31,10 +31,10 @@ namespace Prueba
             //MessageBox.Show(veri);
             //if (veri==null)
             //{
-               
+
             //}
-            grillaescuela.DataSource = ViewRecibos.Leer();
-            //grillaescuela.DataSource = RepositorioEscuela.Leer();
+            //grillaescuela.DataSource = RepositorioRecibos.Leer();
+            grillaescuela.DataSource = RepositorioEscuela.Leer();
         }
 
         private void Form1_Load(object sender, EventArgs e)

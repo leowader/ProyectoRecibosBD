@@ -45,12 +45,10 @@
     <Compile Include="ICrud.cs" />
     <Compile Include="IEstado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RetirarEstudiante.cs" />
     <Compile Include="ServicioEscuela.cs" />
     <Compile Include="ServicioEstudiante.cs" />
     <Compile Include="ServicioLogin.cs" />
     <Compile Include="ServicioRecibo.cs" />
-    <Compile Include="ServicioView.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">

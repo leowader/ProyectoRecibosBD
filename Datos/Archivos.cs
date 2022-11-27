@@ -26,7 +26,6 @@ namespace Datos
             }
             catch (Exception e)
             {
-
                 return e.Message;
             }
         }

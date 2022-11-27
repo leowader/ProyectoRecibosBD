@@ -11,8 +11,6 @@ namespace Datos
         bool Estado;
         OracleCommand Command;
         OracleConnection Connection;
-
-
         public bool Guardar(Recibo recibo)
         {
             try
@@ -35,6 +33,7 @@ namespace Datos
                 Command.Parameters.Add("v_fechaextra", OracleDbType.Date).Value = recibo.FechaExtraordinaria;
                 Command.Parameters.Add("v_banco", OracleDbType.Varchar2).Value = recibo.Banco;
                 Command.Parameters.Add("v_concepto", OracleDbType.Varchar2).Value = recibo.Concepto;
+                Command.Parameters.Add("v_estado", OracleDbType.Varchar2).Value = recibo.EstadoPago;
                 Command.ExecuteNonQuery();
                 cerrarBD();
                 Estado = true;
@@ -45,7 +44,6 @@ namespace Datos
             }
             return Estado;
         }
-
         public List<Recibo> Leer()
         {
             try
@@ -85,7 +83,6 @@ namespace Datos
             recibo.Banco = Fila.GetString(7);
             return recibo;
         }
-
         public bool Eliminar(Recibo recibo)
         {
             bool estado;
@@ -108,6 +105,17 @@ namespace Datos
             }
             return estado;
         }
-
+        public bool Actualizar(Recibo recibo)
+        {
+            abrirBD();
+            Connection = Miconexion();
+            Command = new OracleCommand("upd_estado", Connection);
+            Command.CommandType = System.Data.CommandType.StoredProcedure;
+            Command.Parameters.Add("v_id", OracleDbType.Varchar2).Value = recibo.CodigoReferencia;
+            Command.Parameters.Add("v_estado", OracleDbType.Varchar2).Value = recibo.EstadoPago;
+            Command.ExecuteNonQuery();
+            cerrarBD();
+            return true;
+        }
     }
 }

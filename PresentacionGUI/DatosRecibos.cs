@@ -26,7 +26,6 @@ namespace PresentacionGUI
         {
             Guardar();
             TieneRecibo();
-            //GenerarRecibo();
             CargarGrilla();
         }
         void Guardar()
@@ -41,15 +40,13 @@ namespace PresentacionGUI
                 recibo.FechaLimite = DateTime.Parse(DateLimete.Value.ToString());
                 recibo.FechaExtraordinaria = DateTime.Parse(DateExtra.Value.ToString());
                 recibo.Observaciones = txtObservacion.Text;
-                recibo.EstadoPago = "PENDIENTE";
+                recibo.EstadoPago = "pendiente";
                 recibo.Id = int.Parse(GrillaSelect.Rows[indice].Cells[0].Value.ToString());
-                //recibo.EscuelaRegistrada = GrillaSelect.Rows[indice].Cells[1].Value.ToString();
                 var mensage = logicaRecibo.Guardar(recibo);
                 MessageBox.Show(mensage, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception e)
             {
-
                 MessageBox.Show(e.Message);
             }
         }
@@ -69,12 +66,10 @@ namespace PresentacionGUI
             DateLimete.Text = DateTime.UtcNow.ToString();
             DateExtra.Text = DateTime.UtcNow.ToString();
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        
         void CargarGrilla()
         {
             if (estudiantes.Mostrar() == null)
@@ -114,7 +109,6 @@ namespace PresentacionGUI
 
                 MessageBox.Show(e.Message);
             }
-
         }
         public Estudiante BuscarEstudiante()
         {
@@ -127,8 +121,7 @@ namespace PresentacionGUI
         {
             var estudiantes1 = BuscarEstudiante();
             estudiantes1.TieneRecibo = 'S';
-            estudiantes.Actualizar(estudiantes1);
-
+            estudiantes.upd(estudiantes1);
         }
         public Entidades.Escuela BuscarEscuela()
         {

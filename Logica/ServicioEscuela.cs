@@ -19,58 +19,41 @@ namespace Logica
         {
             ListEscuelas=RutaEscuela.Leer();
         }
-
-
         public void ActualizarList()
         {
             ListEscuelas = RutaEscuela.Leer();
         }
-
-
         public string Guardar(Escuela escuela)
         {
             try
             {
                 var estado= RutaEscuela.Guardar(escuela);
-                //if (ListEscuelas != null)
-                //{
-                //    VerificarNit(escuela);
-                //}
                 return estado ? "ESCUELA REGISTRADA" : "ERROR AL REGISTRAR LA ESCUELA";
             }
             catch (Exception e)
             {
-
                 return e.Message + e.StackTrace;
             }
         }
-
-
         public string VerificarNit(Escuela escuela)
         {
             string estado = "No";
             try
             {
-
                 foreach (var item in ListEscuelas)
                 {
                     if (escuela.NiT.Equals(item.NiT))
                     {
                         estado = "Si";
-
                     }
                 }
-
             }
             catch (Exception e)
             {
-
                 return e.Message;
             }
             return estado;
         }
-
-
         public List<Escuela> Mostrar()
         {
             try
@@ -83,32 +66,25 @@ namespace Logica
                 throw e.InnerException;
             }
         }
-
-
         public string Eliminar(Escuela escuela)
         {
             try
             {
                 var Nit = BuscarEscuela(escuela.NiT);
                 ListEscuelas.Remove(Nit);
-                var estado = RutaEscuela.Eliminar(ListEscuelas);
+                var estado = RutaEscuela.Eliminar(escuela);
                 ActualizarList();
                 return estado ? $"ESCUELA ELIMINADA: {escuela.NombreEscuela}" : $"ERROR AL ELIMINAR LA ESCUELA: {escuela.NombreEscuela}";
             }
             catch (Exception e)
             {
-
                 return e.Message + e.StackTrace;
             }
         }
-
-
-        public string Actualizar(Escuela Escuela,Escuela EscuelaActualizada)
+        public string Actualizar(Escuela EscuelaActualizada)
         {
             try
             {
-                Eliminar(Escuela);
-                Guardar(EscuelaActualizada);
                 ActualizarList();
                 return "ESCUELA ACTUALIZADA";
             }
@@ -118,8 +94,6 @@ namespace Logica
                 return e.Message + e.StackTrace;
             }
         }
-
-
         public Escuela BuscarEscuela(string nit)
         {
             return repositorioEscuela.buscarByname(nit);
@@ -145,7 +119,5 @@ namespace Logica
                 return null;
             }
         }
-
-
     }
 }

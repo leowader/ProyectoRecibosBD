@@ -32,14 +32,10 @@ namespace Logica
                 return e.Message;
             }
         }
-
-
         public List<Recibo> Mostrar()
         {
             return ListaRecibos;
         }
-
-
         public string Eliminar(Recibo recibo)
         {
             ListaRecibos.Remove(recibo);
@@ -47,8 +43,6 @@ namespace Logica
             ActualizarLit();
             return estado ? "INFORMACION DE RECIBO ELIMINADA" : "ERROR AL ELIMINAR LA INFORMACION DEL RECIBO";
         }
-
-
         public Recibo Buscar(string Referencia)
         {
             _ = new Recibo();
@@ -62,16 +56,11 @@ namespace Logica
             }
             return null;
         }
-
-        public bool GenerarRecibo()
+        public string Actualizar(Recibo recibo)
         {
-            /* aqui agregar codigo para generar recibo: si el estado del estudiante es inactivo
-             no se genera el recibo, de lo contrario si*/
-            bool estadoReibo=false;
-            return estadoReibo;
+            RutaRecibos.Actualizar(recibo);
+            return $"actualizado";
         }
-
-
         public string Actualizar(Recibo recibo, Recibo recibo2)
         {
             Eliminar(recibo);
@@ -79,6 +68,6 @@ namespace Logica
             ActualizarLit();
             return "ok";
         }
-
+        
     }
 }

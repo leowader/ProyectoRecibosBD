@@ -16,18 +16,15 @@ namespace PresentacionGUI
     {
         ServicioEscuela servicioEscuela = new ServicioEscuela();
         FormAgregarEscuela formAgregarEscuela = new FormAgregarEscuela();
-
         public FormEditarEscuela()
         {
             InitializeComponent();
             txtTelefono.MaxLength = 10;
         }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Editar();
         }
-
         string Nit;
         void Editar()
         {
@@ -38,14 +35,12 @@ namespace PresentacionGUI
             escuela.Direccion = txtDireccion.Text;
             escuela.Telefono = txtTelefono.Text;
             escuela.Correo = txtCorreo.Text;
-
-            var mensaje = servicioEscuela.Actualizar(escuelaOld, escuela);
+            var mensaje = servicioEscuela.Actualizar(escuela);
             var r = MessageBox.Show(mensaje, "Editar Escuela", MessageBoxButtons.OK, MessageBoxIcon.Information);
             if(r == DialogResult.OK)
             {
                 this.Close();
             }
-
         }
 
         private void FormEditarEscuela_Load(object sender, EventArgs e)
@@ -53,12 +48,10 @@ namespace PresentacionGUI
             Nit = txtNit.Text;
             txtNit.Enabled = false;
         }
-
         private void txtNit_KeyPress(object sender, KeyPressEventArgs e)
         {
             formAgregarEscuela.SoloNumeros(e);
         }
-
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (formAgregarEscuela.SoloLetras(e.KeyChar) == false)
@@ -67,12 +60,10 @@ namespace PresentacionGUI
                 e.Handled = true;
             }
         }
-
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             formAgregarEscuela.SoloNumeros(e);
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();

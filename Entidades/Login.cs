@@ -15,6 +15,5 @@ namespace Entidades
         {
             return $"{Usuario};{Contraseña};{CorreoElectronico}"; 
         }
-
     }
 }

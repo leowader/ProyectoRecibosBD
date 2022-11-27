@@ -55,7 +55,7 @@ namespace PresentacionGUI
 
 
 
-        #region Familiar
+        #region Escuela
         private void btnEscuelas_Click(object sender, EventArgs e)
         {
             MostrarSubMenu(panelEscuelaSubMenu);
@@ -81,9 +81,7 @@ namespace PresentacionGUI
             OcultarSubMenu();
         }
         #endregion
-
-        #region Empresarial
-
+        #region Alumnos
         private void btnAlumnos_Click(object sender, EventArgs e)
         {
             MostrarSubMenu(panelAlumnoSubMenu);
@@ -113,7 +111,6 @@ namespace PresentacionGUI
             OcultarSubMenu();
         }
         #endregion
-
         #region Mostrar Todos
         private void btnRecibo_Click(object sender, EventArgs e)
         {
@@ -121,8 +118,6 @@ namespace PresentacionGUI
             MostrarSubMenu(panelMenuRecibo);
         }
         #endregion
-
-
         public Form formActivo = null;
         public void FormulariosFijo(Form formHijo)
         {
@@ -163,11 +158,6 @@ namespace PresentacionGUI
         private void FormularioMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void FormularioMenu_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
