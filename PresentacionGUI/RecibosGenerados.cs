@@ -32,11 +32,12 @@ namespace PresentacionGUI
             else
             {
                 GrillaRecibosGenerados.Rows.Clear();
-                foreach (var item in ServicioView.Mostrar())
+                foreach (var item in ServicioRecibo.Mostrar())
                 {
-
-                    GrillaRecibosGenerados.Rows.Add(item.CodigoReferencia,item.idEstudiante,item.nombre, item.Concepto, item.valor,
+                    GrillaRecibosGenerados.Rows.Add(item.CodigoReferencia, item.Id, item.idescuela, item.Concepto, item.Cantidad,
                     item.FechaLimite.ToShortDateString(), item.EstadoPago);
+                    //GrillaRecibosGenerados.Rows.Add(item.CodigoReferencia,item.idEstudiante,item.nombre, item.Concepto, item.valor,
+                    //item.FechaLimite.ToShortDateString(), item.EstadoPago);
                 }
             }
         }

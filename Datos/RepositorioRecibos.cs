@@ -95,6 +95,7 @@ namespace Datos
                 Connection = Miconexion();
                 Command = new OracleCommand("eliminar_recibo", Connection);
                 Command.CommandType = System.Data.CommandType.StoredProcedure;
+                Command.Parameters.Add("v_id",OracleDbType.Varchar2).Value=recibo.CodigoReferencia;
                 Command.ExecuteNonQuery();
                 cerrarBD();
                 estado = true;
