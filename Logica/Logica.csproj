@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EstadoRecibo.cs" />
+    <Compile Include="FiltrosGrilla.cs" />
     <Compile Include="ICrud.cs" />
     <Compile Include="IEstado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

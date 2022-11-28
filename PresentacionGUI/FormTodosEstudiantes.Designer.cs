@@ -212,6 +212,7 @@
             this.btnEliminar.TabIndex = 37;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -225,17 +226,18 @@
             this.btnActualizar.TabIndex = 38;
             this.btnActualizar.Text = "actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // txtfiltro
             // 
             this.txtfiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtfiltro.ForeColor = System.Drawing.SystemColors.Menu;
             this.txtfiltro.Location = new System.Drawing.Point(171, 43);
-            this.txtfiltro.Multiline = true;
             this.txtfiltro.Name = "txtfiltro";
             this.txtfiltro.Size = new System.Drawing.Size(218, 20);
             this.txtfiltro.TabIndex = 22;
+            this.txtfiltro.TextChanged += new System.EventHandler(this.txtfiltro_TextChanged);
             // 
             // button1
             // 
@@ -249,6 +251,7 @@
             this.button1.TabIndex = 39;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormTodosEstudiantes
             // 

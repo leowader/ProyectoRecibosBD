@@ -14,6 +14,7 @@ namespace PresentacionGUI
     public partial class FormTodosEstudiantes : Form
     {
         ServicioEstudiante servicioEstudiante = new ServicioEstudiante();
+        FiltrosGrilla FiltrosGrilla= new FiltrosGrilla();
         public FormTodosEstudiantes()
         {
             InitializeComponent();
@@ -125,6 +126,32 @@ namespace PresentacionGUI
                     EliminarGeneral();
                     break;
             }
+        }
+
+        private void txtfiltro_TextChanged(object sender, EventArgs e)
+        {
+            if (txtfiltro.Text=="")
+            {
+                CargarGrilla();
+            }
+            else
+            {
+                filtrar(txtfiltro.Text);
+            }
+        }
+        void filtrar(string nombre)
+        {
+            GrillaEstudiantes.Rows.Clear();
+            foreach (var item in FiltrosGrilla.Filtrostudent(nombre))
+            {
+                GrillaEstudiantes.Rows.Add(item.Id, item.Nombres, item.Apellidos, item.Sexo,
+                item.curso, item.Grado, item.PeriodoEstudio, item.idescuela);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            filtrar(txtfiltro.Text);
         }
     }
 }

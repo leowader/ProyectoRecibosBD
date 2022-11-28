@@ -22,6 +22,7 @@ namespace PresentacionGUI
         Logica.ServicioRecibo logicaRecibo = new Logica.ServicioRecibo();
         Logica.ServicioEstudiante estudiantes = new ServicioEstudiante();
         ServicioEscuela serviceEscuela = new ServicioEscuela();
+        FiltrosGrilla FiltrosGrilla = new FiltrosGrilla();
         void cargarGrilla()
         {
             if (ServicioRecibo.Mostrar()==null)
@@ -136,6 +137,34 @@ namespace PresentacionGUI
         {
             var total=serviceEscuela.total(BuscarEscuela());
             return total;
+        }
+
+        private void txtfiltro_TextChanged(object sender, EventArgs e)
+        {
+            if (txtfiltro.Text=="")
+            {
+                cargarGrilla();
+            }
+            else
+            {
+                filtro(txtfiltro.Text);
+            }
+            
+        }
+        void filtro(string referencia)
+        {
+            GrillaRecibosGenerados.Rows.Clear();
+            foreach (var item in FiltrosGrilla.FiltroRecibo(referencia))
+            {
+                GrillaRecibosGenerados.Rows.Add(item.CodigoReferencia, item.Id, item.idescuela, item.Concepto, item.Cantidad,
+                    item.FechaLimite.ToShortDateString(), item.EstadoPago);
+            }
+            
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            filtro(txtfiltro.Text);
         }
     }
 }

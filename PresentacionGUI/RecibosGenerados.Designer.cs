@@ -46,7 +46,7 @@
             this.panelBotones = new System.Windows.Forms.Panel();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCobrar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnbuscar = new System.Windows.Forms.Button();
             this.txtfiltro = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaRecibosGenerados)).BeginInit();
             this.contextMenuRecibos.SuspendLayout();
@@ -213,29 +213,30 @@
             this.btnCobrar.UseVisualStyleBackColor = false;
             this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
             // 
-            // button1
+            // btnbuscar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(5)))), ((int)(((byte)(22)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(403, 37);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 20);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnbuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(5)))), ((int)(((byte)(22)))));
+            this.btnbuscar.FlatAppearance.BorderSize = 0;
+            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbuscar.ForeColor = System.Drawing.Color.White;
+            this.btnbuscar.Location = new System.Drawing.Point(403, 37);
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(88, 20);
+            this.btnbuscar.TabIndex = 41;
+            this.btnbuscar.Text = "Buscar";
+            this.btnbuscar.UseVisualStyleBackColor = false;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // txtfiltro
             // 
             this.txtfiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtfiltro.ForeColor = System.Drawing.SystemColors.Menu;
-            this.txtfiltro.Location = new System.Drawing.Point(160, 37);
-            this.txtfiltro.Multiline = true;
+            this.txtfiltro.Location = new System.Drawing.Point(168, 37);
             this.txtfiltro.Name = "txtfiltro";
             this.txtfiltro.Size = new System.Drawing.Size(218, 20);
             this.txtfiltro.TabIndex = 40;
+            this.txtfiltro.TextChanged += new System.EventHandler(this.txtfiltro_TextChanged);
             // 
             // RecibosGenerados
             // 
@@ -243,7 +244,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(684, 464);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnbuscar);
             this.Controls.Add(this.txtfiltro);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.GrillaRecibosGenerados);
@@ -274,7 +275,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.TextBox txtfiltro;
     }
 }

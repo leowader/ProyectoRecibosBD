@@ -81,6 +81,7 @@ namespace Datos
             recibo.FechaLimite = DateTime.Parse(Fila.GetString(5));
             recibo.EstadoPago= Fila.GetString(6);
             recibo.Banco = Fila.GetString(7);
+            recibo.Observaciones=Fila.GetString(8);
             return recibo;
         }
         public bool Eliminar(Recibo recibo)

@@ -77,7 +77,7 @@ namespace PresentacionGUI
             rdHombre.Enabled = false;
             rdMujer.Enabled = false;
             cbEscuela.Enabled = false;
-            
+            txtCurso.Enabled = false;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
