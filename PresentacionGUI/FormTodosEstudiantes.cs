@@ -31,7 +31,7 @@ namespace PresentacionGUI
                 foreach (var item in servicioEstudiante.Mostrar())
                 {
                     GrillaEstudiantes.Rows.Add(item.Id, item.Nombres, item.Apellidos, item.Sexo,
-                    item.codigoCurso,item.Grado, item.PeriodoEstudio, item.idescuela);
+                    item.curso,item.Grado, item.PeriodoEstudio, item.idescuela);
                 }
             }
 
@@ -93,8 +93,9 @@ namespace PresentacionGUI
         public void EliminarGeneral()
         {
             var pregunta = MessageBox.Show("¿Esta seguro de eliminar: " + GrillaEstudiantes.CurrentRow.Cells[1].Value.ToString() + "?", "Eliminar Escuela", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            var estudiante = new Estudiante();
-            estudiante.Id = int.Parse(GrillaEstudiantes.Rows[2].Cells[0].Value.ToString());
+            
+            int Id = int.Parse(GrillaEstudiantes.Rows[fila].Cells[0].Value.ToString());
+            var estudiante=servicioEstudiante.Buscar(Id);
             if (pregunta == DialogResult.Yes)
             {
                 Eliminar(estudiante);

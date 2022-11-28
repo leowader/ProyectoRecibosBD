@@ -33,12 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GrillaRecibosGenerados = new System.Windows.Forms.DataGridView();
-            this.panelBotones = new System.Windows.Forms.Panel();
-            this.btnCobrar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.contextMenuRecibos = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.verRecibo = new System.Windows.Forms.ToolStripMenuItem();
-            this.EliminarReciboMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,9 +40,17 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuRecibos = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.verRecibo = new System.Windows.Forms.ToolStripMenuItem();
+            this.EliminarReciboMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelBotones = new System.Windows.Forms.Panel();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnCobrar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtfiltro = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaRecibosGenerados)).BeginInit();
-            this.panelBotones.SuspendLayout();
             this.contextMenuRecibos.SuspendLayout();
+            this.panelBotones.SuspendLayout();
             this.SuspendLayout();
             // 
             // GrillaRecibosGenerados
@@ -84,7 +86,7 @@
             this.GrillaRecibosGenerados.ContextMenuStrip = this.contextMenuRecibos;
             this.GrillaRecibosGenerados.EnableHeadersVisualStyles = false;
             this.GrillaRecibosGenerados.GridColor = System.Drawing.Color.MediumSlateBlue;
-            this.GrillaRecibosGenerados.Location = new System.Drawing.Point(31, 63);
+            this.GrillaRecibosGenerados.Location = new System.Drawing.Point(31, 104);
             this.GrillaRecibosGenerados.Name = "GrillaRecibosGenerados";
             this.GrillaRecibosGenerados.ReadOnly = true;
             this.GrillaRecibosGenerados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -104,70 +106,9 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.GrillaRecibosGenerados.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.GrillaRecibosGenerados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaRecibosGenerados.Size = new System.Drawing.Size(623, 339);
+            this.GrillaRecibosGenerados.Size = new System.Drawing.Size(623, 256);
             this.GrillaRecibosGenerados.TabIndex = 4;
             this.GrillaRecibosGenerados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaRecibosGenerados_CellClick);
-            // 
-            // panelBotones
-            // 
-            this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(5)))), ((int)(((byte)(22)))));
-            this.panelBotones.Controls.Add(this.btnEliminar);
-            this.panelBotones.Controls.Add(this.btnCobrar);
-            this.panelBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBotones.Location = new System.Drawing.Point(0, 421);
-            this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(684, 43);
-            this.panelBotones.TabIndex = 5;
-            // 
-            // btnCobrar
-            // 
-            this.btnCobrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.btnCobrar.FlatAppearance.BorderSize = 0;
-            this.btnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCobrar.ForeColor = System.Drawing.Color.White;
-            this.btnCobrar.Location = new System.Drawing.Point(144, 8);
-            this.btnCobrar.Name = "btnCobrar";
-            this.btnCobrar.Size = new System.Drawing.Size(189, 23);
-            this.btnCobrar.TabIndex = 36;
-            this.btnCobrar.Text = "Cobrar Recibo";
-            this.btnCobrar.UseVisualStyleBackColor = false;
-            this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(339, 8);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(88, 23);
-            this.btnEliminar.TabIndex = 37;
-            this.btnEliminar.Text = "Eliminar Recibo";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // contextMenuRecibos
-            // 
-            this.contextMenuRecibos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verRecibo,
-            this.EliminarReciboMenu});
-            this.contextMenuRecibos.Name = "contextMenuRecibos";
-            this.contextMenuRecibos.Size = new System.Drawing.Size(130, 48);
-            // 
-            // verRecibo
-            // 
-            this.verRecibo.Name = "verRecibo";
-            this.verRecibo.Size = new System.Drawing.Size(129, 22);
-            this.verRecibo.Text = "Ver Recibo";
-            this.verRecibo.Click += new System.EventHandler(this.verRecibo_Click);
-            // 
-            // EliminarReciboMenu
-            // 
-            this.EliminarReciboMenu.Name = "EliminarReciboMenu";
-            this.EliminarReciboMenu.Size = new System.Drawing.Size(129, 22);
-            this.EliminarReciboMenu.Text = "Eliminar";
-            this.EliminarReciboMenu.Click += new System.EventHandler(this.EliminarReciboMenu_Click);
             // 
             // Column1
             // 
@@ -211,21 +152,109 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
+            // contextMenuRecibos
+            // 
+            this.contextMenuRecibos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verRecibo,
+            this.EliminarReciboMenu});
+            this.contextMenuRecibos.Name = "contextMenuRecibos";
+            this.contextMenuRecibos.Size = new System.Drawing.Size(130, 48);
+            // 
+            // verRecibo
+            // 
+            this.verRecibo.Name = "verRecibo";
+            this.verRecibo.Size = new System.Drawing.Size(129, 22);
+            this.verRecibo.Text = "Ver Recibo";
+            this.verRecibo.Click += new System.EventHandler(this.verRecibo_Click);
+            // 
+            // EliminarReciboMenu
+            // 
+            this.EliminarReciboMenu.Name = "EliminarReciboMenu";
+            this.EliminarReciboMenu.Size = new System.Drawing.Size(129, 22);
+            this.EliminarReciboMenu.Text = "Eliminar";
+            this.EliminarReciboMenu.Click += new System.EventHandler(this.EliminarReciboMenu_Click);
+            // 
+            // panelBotones
+            // 
+            this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(5)))), ((int)(((byte)(22)))));
+            this.panelBotones.Controls.Add(this.btnEliminar);
+            this.panelBotones.Controls.Add(this.btnCobrar);
+            this.panelBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBotones.Location = new System.Drawing.Point(0, 421);
+            this.panelBotones.Name = "panelBotones";
+            this.panelBotones.Size = new System.Drawing.Size(684, 43);
+            this.panelBotones.TabIndex = 5;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(339, 8);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(88, 23);
+            this.btnEliminar.TabIndex = 37;
+            this.btnEliminar.Text = "Eliminar Recibo";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnCobrar
+            // 
+            this.btnCobrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnCobrar.FlatAppearance.BorderSize = 0;
+            this.btnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCobrar.ForeColor = System.Drawing.Color.White;
+            this.btnCobrar.Location = new System.Drawing.Point(144, 8);
+            this.btnCobrar.Name = "btnCobrar";
+            this.btnCobrar.Size = new System.Drawing.Size(189, 23);
+            this.btnCobrar.TabIndex = 36;
+            this.btnCobrar.Text = "Cobrar Recibo";
+            this.btnCobrar.UseVisualStyleBackColor = false;
+            this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(5)))), ((int)(((byte)(22)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(403, 37);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 20);
+            this.button1.TabIndex = 41;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // txtfiltro
+            // 
+            this.txtfiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtfiltro.ForeColor = System.Drawing.SystemColors.Menu;
+            this.txtfiltro.Location = new System.Drawing.Point(160, 37);
+            this.txtfiltro.Multiline = true;
+            this.txtfiltro.Name = "txtfiltro";
+            this.txtfiltro.Size = new System.Drawing.Size(218, 20);
+            this.txtfiltro.TabIndex = 40;
+            // 
             // RecibosGenerados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(684, 464);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtfiltro);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.GrillaRecibosGenerados);
             this.Name = "RecibosGenerados";
             this.Text = "RecibosGenerados";
             this.Load += new System.EventHandler(this.RecibosGenerados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GrillaRecibosGenerados)).EndInit();
-            this.panelBotones.ResumeLayout(false);
             this.contextMenuRecibos.ResumeLayout(false);
+            this.panelBotones.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -245,5 +274,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtfiltro;
     }
 }

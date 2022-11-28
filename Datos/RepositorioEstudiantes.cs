@@ -44,7 +44,7 @@ namespace Datos
                 List<Estudiante> listaEstudent = new List<Estudiante>();
                 abrirBD();
                 connection = Miconexion();
-                command = new OracleCommand("select * from estudiante", connection);
+                command = new OracleCommand("select * from verestudiantes", connection);
                 command.ExecuteNonQuery();
                 var raid = command.ExecuteReader();
                 while (raid.Read())
@@ -66,7 +66,7 @@ namespace Datos
                 List<Estudiante> listaEstudent = new List<Estudiante>();
                 abrirBD();
                 connection = Miconexion();
-                command = new OracleCommand("select * from estudiante", connection);
+                command = new OracleCommand("select * from verestudiantes", connection);
                 var raid = command.ExecuteReader();
                 while (raid.Read())
                 {
@@ -87,10 +87,11 @@ namespace Datos
             estudiante.Nombres = linea.GetString(1);
             estudiante.Apellidos = linea.GetString(2);
             estudiante.Sexo = char.Parse(linea.GetString(3));
-            estudiante.PeriodoEstudio = linea.GetString(4);
-            estudiante.idescuela = linea.GetString(5);
-            estudiante.codigoCurso = linea.GetString(6);
-            estudiante.TieneRecibo = char.Parse(linea.GetString(7));
+            estudiante.curso = linea.GetString(4);
+            estudiante.Grado = linea.GetString(5);
+            estudiante.PeriodoEstudio = linea.GetString(6);
+            estudiante.idescuela = linea.GetString(7);
+            estudiante.TieneRecibo= char.Parse(linea.GetString(8));
             return estudiante;
         }
         public bool Eliminar(Estudiante estudiante)

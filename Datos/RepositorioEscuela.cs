@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Datos
 {
-    public class RepositorioEscuela:Archivos,ICrudDatos<Escuela>
+    public class RepositorioEscuela : Archivos, ICrudDatos<Escuela>
     {
         OracleConnection connection;
         OracleCommand command;
@@ -20,9 +20,9 @@ namespace Datos
                 connection = Miconexion();
                 command = new OracleCommand("insert_escuela", connection);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.Parameters.Add("v_id_escuela",OracleDbType.Varchar2).Value= escuela.NiT;
-                command.Parameters.Add("v_nombre_es",OracleDbType.Varchar2).Value=escuela.NombreEscuela;
-                command.Parameters.Add("v_direccion",OracleDbType.Varchar2).Value=escuela.Direccion;
+                command.Parameters.Add("v_id_escuela", OracleDbType.Varchar2).Value = escuela.NiT;
+                command.Parameters.Add("v_nombre_es", OracleDbType.Varchar2).Value = escuela.NombreEscuela;
+                command.Parameters.Add("v_direccion", OracleDbType.Varchar2).Value = escuela.Direccion;
                 command.Parameters.Add("v_telefono", OracleDbType.Varchar2).Value = escuela.Telefono;
                 command.Parameters.Add("v_correo", OracleDbType.Varchar2).Value = escuela.Correo;
                 command.ExecuteNonQuery();
@@ -47,6 +47,7 @@ namespace Datos
                 {
                     ListEscuela.Add(Mapear(raid));
                 }
+
                 cerrarBD();
                 return ListEscuela;
             }
@@ -54,6 +55,17 @@ namespace Datos
             {
                 return null;
             }
+        }
+        public double totalcobro(Escuela escuela)
+        {
+            abrirBD();
+            command = new OracleCommand("totalescuela", connection);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            command.Parameters.Add("v_id_escuela", OracleDbType.Varchar2).Value = escuela.NiT;
+            command.ExecuteNonQuery();
+            var total = command.ExecuteScalar();
+            cerrarBD();
+            return Convert.ToDouble(total);
         }
         public Escuela Mapear(OracleDataReader linea)
         {
@@ -67,11 +79,18 @@ namespace Datos
             };
             return escuela;
         }
-        public bool Eliminar(Escuela ListEscuela)
+        public bool Eliminar(Escuela escuela)
         {
             bool estado;
             try
             {
+                abrirBD();
+                connection = Miconexion();
+                command = new OracleCommand("eliminar_escuela", connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.Add("v_id", OracleDbType.Varchar2).Value = escuela.NiT;
+                command.ExecuteNonQuery();
+                cerrarBD();
                 return estado = true;
             }
             catch (Exception)
@@ -84,16 +103,25 @@ namespace Datos
         {
             foreach (var item in Leer())
             {
-                if (item.NiT==(id))
+                if (item.NiT == (id))
                 {
                     return item;
                 }
             }
-            return null;    
+            return null;
         }
-        public bool Actualizar(Escuela tipo)
+        public bool Actualizar(Escuela escuela)
         {
-            throw new NotImplementedException();
+            abrirBD();
+            connection = Miconexion();
+            command = new OracleCommand("update_escuela",connection);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            command.Parameters.Add("v_id",OracleDbType.Varchar2).Value=escuela.NiT;
+            command.Parameters.Add("v_telefono", OracleDbType.Varchar2).Value = escuela.Telefono;
+            command.Parameters.Add("v_correo", OracleDbType.Varchar2).Value = escuela.Correo;
+            command.ExecuteNonQuery();
+            cerrarBD();
+            return true;
         }
     }
 }

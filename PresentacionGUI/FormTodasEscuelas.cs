@@ -15,13 +15,11 @@ namespace PresentacionGUI
     {
         ServicioEscuela servicioEscuela = new ServicioEscuela();
         FormEditarEscuela formEditarEscuela = new FormEditarEscuela();
-        ServicioEscuela milogica=new ServicioEscuela();
         public FormTodasEscuelas()
         {
             InitializeComponent();
             CargarGrilla();
         }
-        
         void CargarGrilla()
         {
             if (servicioEscuela.Mostrar()==null)
@@ -36,7 +34,6 @@ namespace PresentacionGUI
                 }
             }
         }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             Editar();
@@ -88,7 +85,6 @@ namespace PresentacionGUI
         {
             fila = e.RowIndex;
         }
-
         private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             switch (e.ClickedItem.Name)

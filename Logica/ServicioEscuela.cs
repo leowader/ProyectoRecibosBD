@@ -86,6 +86,7 @@ namespace Logica
             try
             {
                 ActualizarList();
+                RutaEscuela.Actualizar(EscuelaActualizada);
                 return "ESCUELA ACTUALIZADA";
             }
             catch (Exception e)
@@ -97,6 +98,11 @@ namespace Logica
         public Escuela BuscarEscuela(string nit)
         {
             return repositorioEscuela.buscarByname(nit);
+        }
+        public double total(Escuela escuela)
+        {
+            RutaEscuela.totalcobro(escuela);
+            return 0;
         }
 
         public Escuela BuscarNombre(string Nombre)

@@ -83,7 +83,7 @@ namespace PresentacionGUI
                 {
                     if (item.TieneRecibo.Equals('N'))
                     {
-                        GrillaSelect.Rows.Add(item.Id, item.idescuela, item.codigoCurso);
+                        GrillaSelect.Rows.Add(item.Id, item.idescuela, item.Grado);
                     }
                 }
             }
@@ -91,8 +91,7 @@ namespace PresentacionGUI
         private void DatosRecibos_Load(object sender, EventArgs e)
         {
             CargarGrilla();
-            labelindice.Text = indice.ToString();
-            labelcolumn.Text = columna.ToString();
+            
         }
         int indice;
         int columna;
@@ -145,8 +144,7 @@ namespace PresentacionGUI
         {
             indice = e.RowIndex;
             columna = e.ColumnIndex;
-            labelcolumn.Text = GrillaSelect.Rows[indice].Cells[0].Value.ToString();
-            labelindice.Text = indice.ToString();
+            
         }
     }
 }

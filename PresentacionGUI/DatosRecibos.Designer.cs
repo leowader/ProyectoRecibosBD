@@ -32,8 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelRecibo = new System.Windows.Forms.Panel();
-            this.labelcolumn = new System.Windows.Forms.Label();
-            this.labelindice = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.GrillaSelect = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,8 +62,6 @@
             // 
             // panelRecibo
             // 
-            this.panelRecibo.Controls.Add(this.labelcolumn);
-            this.panelRecibo.Controls.Add(this.labelindice);
             this.panelRecibo.Controls.Add(this.label8);
             this.panelRecibo.Controls.Add(this.GrillaSelect);
             this.panelRecibo.Controls.Add(this.txtObservacion);
@@ -88,24 +84,6 @@
             this.panelRecibo.Name = "panelRecibo";
             this.panelRecibo.Size = new System.Drawing.Size(668, 400);
             this.panelRecibo.TabIndex = 0;
-            // 
-            // labelcolumn
-            // 
-            this.labelcolumn.AutoSize = true;
-            this.labelcolumn.ForeColor = System.Drawing.Color.White;
-            this.labelcolumn.Location = new System.Drawing.Point(190, 27);
-            this.labelcolumn.Name = "labelcolumn";
-            this.labelcolumn.Size = new System.Drawing.Size(0, 13);
-            this.labelcolumn.TabIndex = 54;
-            // 
-            // labelindice
-            // 
-            this.labelindice.AutoSize = true;
-            this.labelindice.ForeColor = System.Drawing.Color.White;
-            this.labelindice.Location = new System.Drawing.Point(263, 28);
-            this.labelindice.Name = "labelindice";
-            this.labelindice.Size = new System.Drawing.Size(0, 13);
-            this.labelindice.TabIndex = 53;
             // 
             // label8
             // 
@@ -322,9 +300,9 @@
             this.panelBtn.Controls.Add(this.btnCancelar);
             this.panelBtn.Controls.Add(this.btnAgregar);
             this.panelBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBtn.Location = new System.Drawing.Point(0, 354);
+            this.panelBtn.Location = new System.Drawing.Point(0, 357);
             this.panelBtn.Name = "panelBtn";
-            this.panelBtn.Size = new System.Drawing.Size(668, 46);
+            this.panelBtn.Size = new System.Drawing.Size(668, 43);
             this.panelBtn.TabIndex = 36;
             // 
             // BtnLimpiar
@@ -411,8 +389,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView GrillaSelect;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label labelindice;
-        private System.Windows.Forms.Label labelcolumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Identificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Grado;

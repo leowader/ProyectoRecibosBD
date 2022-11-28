@@ -72,6 +72,12 @@ namespace PresentacionGUI
         {
             Id = int.Parse(txtId.Text);
             txtId.Enabled = false;
+            txtApellidos.Enabled = false;
+            txtNombre.Enabled = false;
+            rdHombre.Enabled = false;
+            rdMujer.Enabled = false;
+            cbEscuela.Enabled = false;
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

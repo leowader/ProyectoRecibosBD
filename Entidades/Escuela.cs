@@ -24,7 +24,8 @@ namespace Entidades
         public string NiT { get; set; }
         public string Telefono { get; set; }
         public string Correo { get; set; }
-        
+        public double totalCobro { get; set; }
+
         public Persona EscuelaPersona
         {
             get => default;

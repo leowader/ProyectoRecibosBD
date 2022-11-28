@@ -126,5 +126,16 @@ namespace PresentacionGUI
         {
             Generate();
         }
+
+        private void totalCobro_Click(object sender, EventArgs e)
+        {
+            var totalcobro = total();
+            MessageBox.Show($"valor total de cobro respecto a los recibos: {totalcobro}");
+        }
+        double total()
+        {
+            var total=serviceEscuela.total(BuscarEscuela());
+            return total;
+        }
     }
 }

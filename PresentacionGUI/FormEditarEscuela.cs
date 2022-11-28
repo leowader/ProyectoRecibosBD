@@ -29,7 +29,6 @@ namespace PresentacionGUI
         void Editar()
         {
             var escuela = new Escuela();
-            var escuelaOld = servicioEscuela.BuscarEscuela(Nit);
             escuela.NiT = txtNit.Text;
             escuela.NombreEscuela = txtNombre.Text;
             escuela.Direccion = txtDireccion.Text;
@@ -47,6 +46,8 @@ namespace PresentacionGUI
         {
             Nit = txtNit.Text;
             txtNit.Enabled = false;
+            txtNombre.Enabled = false;
+            txtDireccion.Enabled = false;
         }
         private void txtNit_KeyPress(object sender, KeyPressEventArgs e)
         {
