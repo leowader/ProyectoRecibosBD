@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecibosGenerados));
             this.GrillaRecibosGenerados = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,9 +49,11 @@
             this.btnCobrar = new System.Windows.Forms.Button();
             this.btnbuscar = new System.Windows.Forms.Button();
             this.txtfiltro = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaRecibosGenerados)).BeginInit();
             this.contextMenuRecibos.SuspendLayout();
             this.panelBotones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // GrillaRecibosGenerados
@@ -86,7 +89,7 @@
             this.GrillaRecibosGenerados.ContextMenuStrip = this.contextMenuRecibos;
             this.GrillaRecibosGenerados.EnableHeadersVisualStyles = false;
             this.GrillaRecibosGenerados.GridColor = System.Drawing.Color.MediumSlateBlue;
-            this.GrillaRecibosGenerados.Location = new System.Drawing.Point(31, 104);
+            this.GrillaRecibosGenerados.Location = new System.Drawing.Point(12, 114);
             this.GrillaRecibosGenerados.Name = "GrillaRecibosGenerados";
             this.GrillaRecibosGenerados.ReadOnly = true;
             this.GrillaRecibosGenerados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -106,7 +109,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.GrillaRecibosGenerados.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.GrillaRecibosGenerados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaRecibosGenerados.Size = new System.Drawing.Size(623, 256);
+            this.GrillaRecibosGenerados.Size = new System.Drawing.Size(660, 236);
             this.GrillaRecibosGenerados.TabIndex = 4;
             this.GrillaRecibosGenerados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaRecibosGenerados_CellClick);
             // 
@@ -219,7 +222,7 @@
             this.btnbuscar.FlatAppearance.BorderSize = 0;
             this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbuscar.ForeColor = System.Drawing.Color.White;
-            this.btnbuscar.Location = new System.Drawing.Point(403, 37);
+            this.btnbuscar.Location = new System.Drawing.Point(403, 63);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(88, 20);
             this.btnbuscar.TabIndex = 41;
@@ -232,11 +235,22 @@
             this.txtfiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtfiltro.ForeColor = System.Drawing.SystemColors.Menu;
-            this.txtfiltro.Location = new System.Drawing.Point(168, 37);
+            this.txtfiltro.Location = new System.Drawing.Point(168, 63);
             this.txtfiltro.Name = "txtfiltro";
             this.txtfiltro.Size = new System.Drawing.Size(218, 20);
             this.txtfiltro.TabIndex = 40;
             this.txtfiltro.TextChanged += new System.EventHandler(this.txtfiltro_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(155, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(252, 43);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 42;
+            this.pictureBox1.TabStop = false;
             // 
             // RecibosGenerados
             // 
@@ -248,12 +262,14 @@
             this.Controls.Add(this.txtfiltro);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.GrillaRecibosGenerados);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "RecibosGenerados";
             this.Text = "RecibosGenerados";
             this.Load += new System.EventHandler(this.RecibosGenerados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GrillaRecibosGenerados)).EndInit();
             this.contextMenuRecibos.ResumeLayout(false);
             this.panelBotones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +293,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.TextBox txtfiltro;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

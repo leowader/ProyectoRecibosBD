@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTodosEstudiantes));
             this.GrillaEstudiantes = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,9 +50,11 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.txtfiltro = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaEstudiantes)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panelBotones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // GrillaEstudiantes
@@ -88,7 +91,7 @@
             this.GrillaEstudiantes.ContextMenuStrip = this.contextMenuStrip1;
             this.GrillaEstudiantes.EnableHeadersVisualStyles = false;
             this.GrillaEstudiantes.GridColor = System.Drawing.Color.MediumSlateBlue;
-            this.GrillaEstudiantes.Location = new System.Drawing.Point(12, 92);
+            this.GrillaEstudiantes.Location = new System.Drawing.Point(12, 114);
             this.GrillaEstudiantes.Name = "GrillaEstudiantes";
             this.GrillaEstudiantes.ReadOnly = true;
             this.GrillaEstudiantes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -233,7 +236,7 @@
             this.txtfiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.txtfiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtfiltro.ForeColor = System.Drawing.SystemColors.Menu;
-            this.txtfiltro.Location = new System.Drawing.Point(171, 43);
+            this.txtfiltro.Location = new System.Drawing.Point(171, 63);
             this.txtfiltro.Name = "txtfiltro";
             this.txtfiltro.Size = new System.Drawing.Size(218, 20);
             this.txtfiltro.TabIndex = 22;
@@ -245,13 +248,24 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(414, 43);
+            this.button1.Location = new System.Drawing.Point(414, 63);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 20);
             this.button1.TabIndex = 39;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(157, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(252, 43);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 40;
+            this.pictureBox1.TabStop = false;
             // 
             // FormTodosEstudiantes
             // 
@@ -263,11 +277,13 @@
             this.Controls.Add(this.txtfiltro);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.GrillaEstudiantes);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "FormTodosEstudiantes";
             this.Text = "FormTodosEstudiantes";
             ((System.ComponentModel.ISupportInitialize)(this.GrillaEstudiantes)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.panelBotones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,5 +307,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox txtfiltro;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -177,8 +177,8 @@
             this.panelEscuelas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEscuelas.Location = new System.Drawing.Point(0, 0);
             this.panelEscuelas.Name = "panelEscuelas";
-            this.panelEscuelas.Size = new System.Drawing.Size(666, 423);
-            this.panelEscuelas.TabIndex = 3;
+            this.panelEscuelas.Size = new System.Drawing.Size(668, 425);
+            this.panelEscuelas.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -187,7 +187,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(115, 31);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(477, 78);
+            this.pictureBox1.Size = new System.Drawing.Size(479, 78);
             this.pictureBox1.TabIndex = 37;
             this.pictureBox1.TabStop = false;
             // 
@@ -198,9 +198,9 @@
             this.panelBtn.Controls.Add(this.btnCancelar);
             this.panelBtn.Controls.Add(this.btnAgregar);
             this.panelBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBtn.Location = new System.Drawing.Point(0, 380);
+            this.panelBtn.Location = new System.Drawing.Point(0, 382);
             this.panelBtn.Name = "panelBtn";
-            this.panelBtn.Size = new System.Drawing.Size(666, 43);
+            this.panelBtn.Size = new System.Drawing.Size(668, 43);
             this.panelBtn.TabIndex = 36;
             // 
             // BtnLimpiar
@@ -253,15 +253,14 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(381, 141);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(254, 211);
+            this.pictureBox2.Size = new System.Drawing.Size(256, 213);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
             // 
             // panelFondo
             // 
-            this.panelFondo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.panelFondo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFondo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panelFondo.Controls.Add(this.panelEscuelas);
             this.panelFondo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFondo.Location = new System.Drawing.Point(0, 0);
@@ -273,6 +272,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(668, 425);
             this.Controls.Add(this.panelFondo);
             this.Name = "FormAgregarEscuela";

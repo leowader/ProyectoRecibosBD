@@ -32,8 +32,8 @@
             this.panelFondo = new System.Windows.Forms.Panel();
             this.panelEstudiantes = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtcodigoCurso = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.txtcodigoCurso = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtGrado = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -67,8 +67,7 @@
             // 
             // panelFondo
             // 
-            this.panelFondo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.panelFondo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFondo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panelFondo.Controls.Add(this.panelEstudiantes);
             this.panelFondo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFondo.Location = new System.Drawing.Point(0, 0);
@@ -107,7 +106,7 @@
             this.panelEstudiantes.Controls.Add(this.label1);
             this.panelEstudiantes.Location = new System.Drawing.Point(0, 0);
             this.panelEstudiantes.Name = "panelEstudiantes";
-            this.panelEstudiantes.Size = new System.Drawing.Size(666, 398);
+            this.panelEstudiantes.Size = new System.Drawing.Size(668, 400);
             this.panelEstudiantes.TabIndex = 0;
             // 
             // label9
@@ -120,6 +119,16 @@
             this.label9.TabIndex = 41;
             this.label9.Text = "Codigo Curso";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(86, 11);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(570, 78);
+            this.pictureBox3.TabIndex = 39;
+            this.pictureBox3.TabStop = false;
+            // 
             // txtcodigoCurso
             // 
             this.txtcodigoCurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
@@ -129,16 +138,6 @@
             this.txtcodigoCurso.Name = "txtcodigoCurso";
             this.txtcodigoCurso.Size = new System.Drawing.Size(88, 13);
             this.txtcodigoCurso.TabIndex = 40;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(85, 11);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(570, 78);
-            this.pictureBox3.TabIndex = 39;
-            this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -175,9 +174,9 @@
             this.panelBtn.Controls.Add(this.btnCancelar);
             this.panelBtn.Controls.Add(this.btnAgregar);
             this.panelBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBtn.Location = new System.Drawing.Point(0, 352);
+            this.panelBtn.Location = new System.Drawing.Point(0, 354);
             this.panelBtn.Name = "panelBtn";
-            this.panelBtn.Size = new System.Drawing.Size(666, 46);
+            this.panelBtn.Size = new System.Drawing.Size(668, 46);
             this.panelBtn.TabIndex = 35;
             // 
             // BtnLimpiar
@@ -241,7 +240,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(401, 135);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(254, 211);
+            this.pictureBox1.Size = new System.Drawing.Size(256, 213);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
@@ -403,6 +402,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(668, 400);
             this.Controls.Add(this.panelFondo);
             this.Name = "FormAgregarEstudiante";
