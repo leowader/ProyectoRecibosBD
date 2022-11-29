@@ -12,3 +12,9 @@ se podría modelar para todas las instituciones que lo requieran, gracias a las 
 
 Inicialmente, una vez haya iniciado sección o registrado, procederá a hacer uso de las multiples funciones de la aplicación 
 donde cada una de las partes tendrán sus excepciones controladas y todas completamente funcionales para el usuario.
+
+
+# Repositorio antiguo con archivo txt
+https://github.com/amunozo11/ProyectoRecibos
+
+### Decidimos trabajar en un nuevo repositorio y en unico computador para evitar problemas con Oracle
