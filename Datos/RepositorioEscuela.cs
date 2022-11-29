@@ -47,7 +47,6 @@ namespace Datos
                 {
                     ListEscuela.Add(Mapear(raid));
                 }
-
                 cerrarBD();
                 return ListEscuela;
             }

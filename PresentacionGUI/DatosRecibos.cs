@@ -27,6 +27,8 @@ namespace PresentacionGUI
             Guardar();
             TieneRecibo();
             CargarGrilla();
+            GenerarRecibo();
+
         }
         void Guardar()
         {

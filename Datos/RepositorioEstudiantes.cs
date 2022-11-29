@@ -24,7 +24,6 @@ namespace Datos
                 command.Parameters.Add("v_sexo", OracleDbType.Char).Value = estudiante.Sexo;
                 command.Parameters.Add("v_escuela_peri", OracleDbType.Varchar2).Value = estudiante.PeriodoEstudio;
                 command.Parameters.Add("v_idescuela", OracleDbType.Varchar2).Value = estudiante.idescuela;
-                //command.Parameters.Add("v_idescuela", OracleDbType.Varchar2).Value = estudiante.Escuela.NiT;
                 command.Parameters.Add("v_idgrado", OracleDbType.Varchar2).Value = estudiante.codigoCurso;
                 command.ExecuteNonQuery();
                 cerrarBD();
