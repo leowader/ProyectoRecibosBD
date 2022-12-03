@@ -17,6 +17,8 @@ namespace PresentacionGUI
         public DatosRecibos()
         {
             InitializeComponent();
+            txtReferencia.Enabled=false;
+            txtReferencia.Text= new Random().Next(100000, 1000000).ToString();
         }
         Logica.ServicioRecibo logicaRecibo=new Logica.ServicioRecibo();
         Logica.ServicioEstudiante estudiantes = new ServicioEstudiante();
@@ -46,6 +48,7 @@ namespace PresentacionGUI
                 recibo.Id = int.Parse(GrillaSelect.Rows[indice].Cells[0].Value.ToString());
                 var mensage = logicaRecibo.Guardar(recibo);
                 MessageBox.Show(mensage, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtReferencia.Text = new Random().Next(100000, 1000000).ToString();
             }
             catch (Exception e)
             {
@@ -103,7 +106,6 @@ namespace PresentacionGUI
             try
             {
                 recibo.GenerarRecibo(BuscarEstudiante(), BuscarEscuela(), ReciboInfo());
-                recibo.ShowDialog();
             }
             catch (Exception e)
             {
@@ -146,7 +148,8 @@ namespace PresentacionGUI
         {
             indice = e.RowIndex;
             columna = e.ColumnIndex;
-            
+            labelPrueba2.Text= GrillaSelect.Rows[indice].Cells[1].Value.ToString();
+            labelPrueba.Text=(GrillaSelect.Rows[indice].Cells[0].Value.ToString());
         }
     }
 }

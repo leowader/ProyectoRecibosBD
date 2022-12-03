@@ -24,8 +24,8 @@ namespace Logica
             try
             {
                 var estado = RutaRecibos.Guardar(estudiante);
-                return estado ? $"INFORMACION DE RECIBO GUARDADA" :
-                $"ERROR AL GUARDAR LA INFORMACION DEL RECIBO";
+                return estado ? $"RECIBO REGISTRADO" :
+                $"ERROR AL REGISTRAR EL RECIBO";
             }
             catch (Exception e)
             {

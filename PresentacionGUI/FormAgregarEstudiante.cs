@@ -40,6 +40,7 @@ namespace PresentacionGUI
                     estudiante.Id =int.Parse(txtId.Text);
                     estudiante.Nombres = txtNombre.Text;
                     estudiante.Apellidos = txtApellidos.Text;
+                    
                     if (rdHombre.Checked)
                     {
                         estudiante.Sexo = 'M';
@@ -68,6 +69,7 @@ namespace PresentacionGUI
             cbEscuela.Items.Clear();
             cbEscuela.DataSource = ServicioEscuela.Mostrar();
             cbEscuela.DisplayMember = "NombreEscuela";
+
         }
         private void Limpiar(Control control, Panel group2)
         {

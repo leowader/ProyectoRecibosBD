@@ -47,5 +47,10 @@ namespace Prueba
             var estado=RepositorioEscuela.Miconexion();
             MessageBox.Show(estado.State.ToString());
         }
+
+        private void btnNum_Click(object sender, EventArgs e)
+        {
+            txtprueba.Text = new Random().Next(100000,1000000).ToString();
+        }
     }
 }

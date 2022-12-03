@@ -16,7 +16,7 @@ namespace Datos
             {
                 abrirBD();
                 connection = Miconexion();
-                command = new OracleCommand("insert_estudiante", connection);
+                command = new OracleCommand("estudiantePackage.insert_estudiante", connection);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
                 command.Parameters.Add("v_id_estudiante", OracleDbType.Varchar2).Value = estudiante.Id;
                 command.Parameters.Add("v_nombre", OracleDbType.Varchar2).Value = estudiante.Nombres;
@@ -100,7 +100,7 @@ namespace Datos
             {
                 abrirBD();
                 connection = Miconexion();
-                command = new OracleCommand("eliminar_estudiante",connection);
+                command = new OracleCommand("estudiantePackage.eliminar_estudiante", connection);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
                 command.Parameters.Add("v_id",OracleDbType.Varchar2).Value=estudiante.Id;
                 command.ExecuteNonQuery();
@@ -119,7 +119,7 @@ namespace Datos
             {
                 abrirBD();
                 connection = Miconexion();
-                command = new OracleCommand("atualizar_estudiante", connection);
+                command = new OracleCommand("estudiantePackage.atualizar_estudiante", connection);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
                 command.Parameters.Add("v_id", OracleDbType.Varchar2).Value = estudiante.Id;
                 command.Parameters.Add("v_grado", OracleDbType.Varchar2).Value = estudiante.codigoCurso;
@@ -138,7 +138,7 @@ namespace Datos
         {
             abrirBD();
             connection = Miconexion();
-            command = new OracleCommand("atualizar_estuTiRecibo", connection);
+            command = new OracleCommand("estudiantePackage.atualizar_estuTiRecibo", connection);
             command.CommandType = System.Data.CommandType.StoredProcedure;
             command.Parameters.Add("v_id", OracleDbType.Varchar2).Value = estudiante.Id;
             command.Parameters.Add("v_tienerecibo", OracleDbType.Char).Value =estudiante.TieneRecibo;

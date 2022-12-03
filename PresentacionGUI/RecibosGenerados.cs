@@ -110,11 +110,14 @@ namespace PresentacionGUI
         void Generate()
         {
             PresentacionGUI.Recibo recibo = new Recibo();
+            ImRecibo imRecibo = new ImRecibo();
             try
             {
                 var recibos = BuscarRecibo();
-                recibo.GenerarRecibo(BuscarEstudiante(), BuscarEscuela(),recibos);
-                recibo.Show();
+                //recibo.GenerarRecibo(BuscarEstudiante(), BuscarEscuela(),recibos);
+                //recibo.Show();
+                imRecibo.GenerarReciboVol2(BuscarEstudiante(), BuscarEscuela(), recibos);
+                imRecibo.Show();
             }
             catch (Exception e)
             {

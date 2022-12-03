@@ -51,9 +51,9 @@ namespace PresentacionGUI
             try
             {
                 formEditarEstudiante.txtId.Text = GrillaEstudiantes.CurrentRow.Cells[0].Value.ToString();
-            formEditarEstudiante.txtNombre.Text = GrillaEstudiantes.CurrentRow.Cells[1].Value.ToString();
-            formEditarEstudiante.txtApellidos.Text = GrillaEstudiantes.CurrentRow.Cells[2].Value.ToString();
-            string hombre = GrillaEstudiantes.CurrentRow.Cells[3].Value.ToString();
+                formEditarEstudiante.txtNombre.Text = GrillaEstudiantes.CurrentRow.Cells[1].Value.ToString();
+                formEditarEstudiante.txtApellidos.Text = GrillaEstudiantes.CurrentRow.Cells[2].Value.ToString();
+                string hombre = GrillaEstudiantes.CurrentRow.Cells[3].Value.ToString();
             if (hombre == "M")
             {
                 formEditarEstudiante.rdHombre.Checked = true;

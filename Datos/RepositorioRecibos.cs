@@ -17,14 +17,14 @@ namespace Datos
             {
                 abrirBD();
                 Connection = Miconexion();
-                Command = new OracleCommand("insert_matricula", Connection);
+                Command = new OracleCommand("matriculapackage.insert_matricula", Connection);
                 Command.CommandType = System.Data.CommandType.StoredProcedure;
                 Command.Parameters.Add("v_idmatricula", OracleDbType.Int32).Value = 0;
                 Command.Parameters.Add("v_valor", OracleDbType.Varchar2).Value = recibo.Cantidad;
                 Command.Parameters.Add("fechamatricula", OracleDbType.Date).Value = DateTime.Now;
                 Command.Parameters.Add("v_idestudiante", OracleDbType.Varchar2).Value = recibo.Id;
                 Command.ExecuteNonQuery();
-                Command = new OracleCommand("insert_recibo", Connection);
+                Command = new OracleCommand("reciboPackage.insert_recibo", Connection);
                 Command.CommandType = System.Data.CommandType.StoredProcedure;
                 Command.Parameters.Add("v_idrecibo", OracleDbType.Varchar2).Value = recibo.CodigoReferencia;
                 Command.Parameters.Add("v_impression", OracleDbType.Date).Value = DateTime.Now;
@@ -91,7 +91,7 @@ namespace Datos
             {
                 abrirBD();
                 Connection = Miconexion();
-                Command = new OracleCommand("eliminar_recibo", Connection);
+                Command = new OracleCommand("reciboPackage.eliminar_recibo", Connection);
                 Command.CommandType = System.Data.CommandType.StoredProcedure;
                 Command.Parameters.Add("v_id",OracleDbType.Varchar2).Value=recibo.CodigoReferencia;
                 Command.ExecuteNonQuery();
@@ -110,7 +110,7 @@ namespace Datos
         {
             abrirBD();
             Connection = Miconexion();
-            Command = new OracleCommand("upd_estado", Connection);
+            Command = new OracleCommand("recibopackage.upd_estado", Connection);
             Command.CommandType = System.Data.CommandType.StoredProcedure;
             Command.Parameters.Add("v_id", OracleDbType.Varchar2).Value = recibo.CodigoReferencia;
             Command.Parameters.Add("v_estado", OracleDbType.Varchar2).Value = recibo.EstadoPago;

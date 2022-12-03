@@ -31,6 +31,8 @@
             this.btnconectar = new System.Windows.Forms.Button();
             this.grillaescuela = new System.Windows.Forms.DataGridView();
             this.btnestado = new System.Windows.Forms.Button();
+            this.txtprueba = new System.Windows.Forms.TextBox();
+            this.btnNum = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grillaescuela)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,11 +64,30 @@
             this.btnestado.UseVisualStyleBackColor = true;
             this.btnestado.Click += new System.EventHandler(this.btnestado_Click);
             // 
+            // txtprueba
+            // 
+            this.txtprueba.Location = new System.Drawing.Point(160, 77);
+            this.txtprueba.Name = "txtprueba";
+            this.txtprueba.Size = new System.Drawing.Size(100, 20);
+            this.txtprueba.TabIndex = 3;
+            // 
+            // btnNum
+            // 
+            this.btnNum.Location = new System.Drawing.Point(88, 121);
+            this.btnNum.Name = "btnNum";
+            this.btnNum.Size = new System.Drawing.Size(75, 23);
+            this.btnNum.TabIndex = 4;
+            this.btnNum.Text = "Probar";
+            this.btnNum.UseVisualStyleBackColor = true;
+            this.btnNum.Click += new System.EventHandler(this.btnNum_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(477, 412);
+            this.Controls.Add(this.btnNum);
+            this.Controls.Add(this.txtprueba);
             this.Controls.Add(this.btnestado);
             this.Controls.Add(this.grillaescuela);
             this.Controls.Add(this.btnconectar);
@@ -75,6 +96,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grillaescuela)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -83,6 +105,8 @@
         private System.Windows.Forms.Button btnconectar;
         private System.Windows.Forms.DataGridView grillaescuela;
         private System.Windows.Forms.Button btnestado;
+        private System.Windows.Forms.TextBox txtprueba;
+        private System.Windows.Forms.Button btnNum;
     }
 }
 

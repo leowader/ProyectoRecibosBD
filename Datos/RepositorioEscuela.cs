@@ -18,7 +18,7 @@ namespace Datos
             {
                 abrirBD();
                 connection = Miconexion();
-                command = new OracleCommand("insert_escuela", connection);
+                command = new OracleCommand("escuelaPackage.insert_escuela", connection);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
                 command.Parameters.Add("v_id_escuela", OracleDbType.Varchar2).Value = escuela.NiT;
                 command.Parameters.Add("v_nombre_es", OracleDbType.Varchar2).Value = escuela.NombreEscuela;
@@ -85,7 +85,7 @@ namespace Datos
             {
                 abrirBD();
                 connection = Miconexion();
-                command = new OracleCommand("eliminar_escuela", connection);
+                command = new OracleCommand("escuelaPackage.eliminar_escuela", connection);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
                 command.Parameters.Add("v_id", OracleDbType.Varchar2).Value = escuela.NiT;
                 command.ExecuteNonQuery();
@@ -113,7 +113,7 @@ namespace Datos
         {
             abrirBD();
             connection = Miconexion();
-            command = new OracleCommand("update_escuela",connection);
+            command = new OracleCommand("escuelaPackage.update_escuela", connection);
             command.CommandType = System.Data.CommandType.StoredProcedure;
             command.Parameters.Add("v_id",OracleDbType.Varchar2).Value=escuela.NiT;
             command.Parameters.Add("v_telefono", OracleDbType.Varchar2).Value = escuela.Telefono;

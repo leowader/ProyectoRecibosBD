@@ -19,6 +19,8 @@ namespace PresentacionGUI
         {
             InitializeComponent();
             txtTelefono.MaxLength = 10;
+            txtNit.Enabled = false;
+            txtNit.Text = new Random().Next(100000, 1000000).ToString();
         }
         void Guardar()
         {
@@ -31,12 +33,13 @@ namespace PresentacionGUI
                 try
                 {
                     Escuela escuela = new Escuela();
-                    escuela.NiT = txtNit.Text;
+                    escuela.NiT= txtNit.Text ;
                     escuela.NombreEscuela = txtNombre.Text;
                     escuela.Direccion = txtDireccion.Text;
                     escuela.Telefono = txtTelefono.Text;
                     escuela.Correo = txtCorreo.Text;
                     var mensaje = servicioEscuela.Guardar(escuela);
+                    txtNit.Text = new Random().Next(100000, 1000000).ToString();
                     MessageBox.Show(mensaje, "Regristro escuela", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception e)
