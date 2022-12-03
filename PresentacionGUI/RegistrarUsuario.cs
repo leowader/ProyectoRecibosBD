@@ -39,6 +39,7 @@ namespace PresentacionGUI
                 usuario.Usuario = txtUsuario.Text;
                 usuario.Contraseña = txtContraseña.Text;
                 usuario.CorreoElectronico = txtCorreoL.Text;
+                usuario.IdUser = txtId.Text;
                 var mensage = ServicioLogin.Guardar(usuario);
                 MessageBox.Show(mensage, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

@@ -26,10 +26,6 @@ namespace Logica
             try
             {
                 var estado = Rutalogin.Guardar(usuario);
-                if (ListUsuarios != null)
-                {
-                    VerificarUsuario(usuario);
-                }
                 return estado ? "USUARIO REGISTRADO" : "ERROR AL REGISTRAR EL USUARIO";
             }
             catch (Exception e)
@@ -37,26 +33,17 @@ namespace Logica
                 return e.Message + e.StackTrace;
             }
         }
-        public string VerificarUsuario(Login usuario)
+        public bool verificarUsuario(Login user)
         {
-            string estado = "No";
             try
             {
-
-                foreach (var item in ListUsuarios)
-                {
-                    if (usuario.Usuario.Equals(item.Usuario))
-                    {
-                        estado = "Si";
-
-                    }
-                }
+                var estado = Rutalogin.verificarUsuario(user);
+                return true;
             }
-            catch (Exception e)
+            catch (Exception )
             {
-                return e.Message;
+                return false;
             }
-            return estado;
         }
         public List<Login> Mostrar()
         {
@@ -70,21 +57,6 @@ namespace Logica
                 throw e.InnerException;
             }
         }
-        bool estado;
-        public bool InicioSession(string usurario,string contraseña)
-        {
-            ActualizarList();
-            if (ListUsuarios!=null)
-            {
-                foreach (var item in ListUsuarios)
-                {
-                    if (item.Usuario.Equals(usurario) && item.Contraseña.Equals(contraseña))
-                    {
-                        return estado = true;
-                    }
-                }
-            }
-            return estado;
-        }
+
     }
 }

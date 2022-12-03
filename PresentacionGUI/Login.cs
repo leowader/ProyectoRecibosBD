@@ -40,7 +40,10 @@ namespace PresentacionGUI
         }
         void VerificarSession()
         {
-            var estado = ServicioLogin.InicioSession(txtUsuario.Text.ToUpper(),txtContraseña.Text.ToUpper());
+            var user = new Entidades.Login();
+            user.Usuario=txtUsuario.Text;
+            user.Contraseña = txtContraseña.Text;
+            var estado = ServicioLogin.verificarUsuario(user);
             if (estado==true)
             {
                 FormularioMenu formularioMenu = new FormularioMenu();
