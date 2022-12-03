@@ -16,12 +16,12 @@ namespace PresentacionGUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormularioMenu());
-            Application.Run(new Login());
+            //Application.Run(new FormularioMenu());
+            //Application.Run(new Login());
             //log
-            //Login login = new Login();
-            //login.Show();
-            //Application.Run();
+            Login login = new Login();
+            login.Show();
+            Application.Run();
         }
     }
 }

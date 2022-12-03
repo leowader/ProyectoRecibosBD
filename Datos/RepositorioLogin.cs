@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class RepositorioLogin:Archivos
+    public class RepositorioLogin:ConexionBd
     {
         public RepositorioLogin()
         {

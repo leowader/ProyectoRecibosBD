@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Datos
 {
-    public class RepositorioRecibos:Archivos,ICrudDatos<Recibo>
+    public class RepositorioRecibos:ConexionBd,ICrudDatos<Recibo>
     {
         bool Estado;
         OracleCommand Command;

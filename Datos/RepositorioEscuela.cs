@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Datos
 {
-    public class RepositorioEscuela : Archivos, ICrudDatos<Escuela>
+    public class RepositorioEscuela : ConexionBd, ICrudDatos<Escuela>
     {
         OracleConnection connection;
         OracleCommand command;

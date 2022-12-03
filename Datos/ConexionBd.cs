@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
 namespace Datos
 {
-    public class Archivos
+    public class ConexionBd
     {
         public string ruta;
         public string stringConexion= "DATA SOURCE= LOCALHOST:1521/XEPDB1 ; PASSWORD = recibovol1 ; USER ID = recibo";
 
         OracleConnection conexion;
-        public Archivos()
+        public ConexionBd()
         {
             conexion = new OracleConnection(stringConexion);
         }

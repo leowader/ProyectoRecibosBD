@@ -6,7 +6,7 @@ using Oracle.ManagedDataAccess.Types;
 using System.IO;
 namespace Datos
 {
-    public class RepositorioEstudiantes: Archivos,ICrudDatos<Estudiante>
+    public class RepositorioEstudiantes: ConexionBd,ICrudDatos<Estudiante>
     {
         OracleCommand command;
         OracleConnection connection;
