@@ -20,24 +20,24 @@ namespace Logica
             estudies = RepositorioEstudiantes.Leer();
         }
         
-        public List<Recibo> FiltroRecibo(string referencia)
+        public List<Recibo> FiltroRecibo(string texto)
         {
             var listfiltro=new List<Recibo>();
             foreach (var item in recibos)
             {
-                if (item.CodigoReferencia.StartsWith(referencia))
+                if (item.CodigoReferencia.StartsWith(texto))
                 {
                     listfiltro.Add(item);
                 }
             }
             return listfiltro;
         }
-        public List<Estudiante> Filtrostudent(string nombre)
+        public List<Estudiante> Filtrostudent(string texto)
         {
             var liststudent = new List<Estudiante>();
             foreach (var item in estudies)
             {
-                if (item.Nombres.StartsWith(nombre))
+                if (item.Nombres.StartsWith(texto))
                 {
                     liststudent.Add(item);
                 }

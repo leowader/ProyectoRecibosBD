@@ -9,7 +9,6 @@ namespace Datos
 {
     public class ConexionBd
     {
-        public string ruta;
         public string stringConexion= "DATA SOURCE= LOCALHOST:1521/XEPDB1 ; PASSWORD = recibovol1 ; USER ID = recibo";
 
         OracleConnection conexion;

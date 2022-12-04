@@ -183,7 +183,7 @@
             this.txtId.Location = new System.Drawing.Point(408, 75);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(191, 13);
-            this.txtId.TabIndex = 25;
+            this.txtId.TabIndex = 16;
             // 
             // pictureBox5
             // 
@@ -227,6 +227,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "RegistrarUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistrarUsuario";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
