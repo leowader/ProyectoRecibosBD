@@ -33,12 +33,14 @@
             this.btnestado = new System.Windows.Forms.Button();
             this.txtprueba = new System.Windows.Forms.TextBox();
             this.btnNum = new System.Windows.Forms.Button();
+            this.cbPrueba = new System.Windows.Forms.ComboBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grillaescuela)).BeginInit();
             this.SuspendLayout();
             // 
             // btnconectar
             // 
-            this.btnconectar.Location = new System.Drawing.Point(193, 121);
+            this.btnconectar.Location = new System.Drawing.Point(115, 121);
             this.btnconectar.Name = "btnconectar";
             this.btnconectar.Size = new System.Drawing.Size(75, 23);
             this.btnconectar.TabIndex = 0;
@@ -56,9 +58,9 @@
             // 
             // btnestado
             // 
-            this.btnestado.Location = new System.Drawing.Point(299, 121);
+            this.btnestado.Location = new System.Drawing.Point(221, 121);
             this.btnestado.Name = "btnestado";
-            this.btnestado.Size = new System.Drawing.Size(75, 23);
+            this.btnestado.Size = new System.Drawing.Size(83, 23);
             this.btnestado.TabIndex = 2;
             this.btnestado.Text = "estado";
             this.btnestado.UseVisualStyleBackColor = true;
@@ -73,7 +75,7 @@
             // 
             // btnNum
             // 
-            this.btnNum.Location = new System.Drawing.Point(88, 121);
+            this.btnNum.Location = new System.Drawing.Point(12, 121);
             this.btnNum.Name = "btnNum";
             this.btnNum.Size = new System.Drawing.Size(75, 23);
             this.btnNum.TabIndex = 4;
@@ -81,11 +83,31 @@
             this.btnNum.UseVisualStyleBackColor = true;
             this.btnNum.Click += new System.EventHandler(this.btnNum_Click);
             // 
+            // cbPrueba
+            // 
+            this.cbPrueba.FormattingEnabled = true;
+            this.cbPrueba.Location = new System.Drawing.Point(315, 77);
+            this.cbPrueba.Name = "cbPrueba";
+            this.cbPrueba.Size = new System.Drawing.Size(83, 21);
+            this.cbPrueba.TabIndex = 5;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(323, 121);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 6;
+            this.btnGuardar.Text = "guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(477, 412);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.cbPrueba);
             this.Controls.Add(this.btnNum);
             this.Controls.Add(this.txtprueba);
             this.Controls.Add(this.btnestado);
@@ -107,6 +129,8 @@
         private System.Windows.Forms.Button btnestado;
         private System.Windows.Forms.TextBox txtprueba;
         private System.Windows.Forms.Button btnNum;
+        private System.Windows.Forms.ComboBox cbPrueba;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }
 

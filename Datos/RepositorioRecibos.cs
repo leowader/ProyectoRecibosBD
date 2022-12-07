@@ -22,7 +22,7 @@ namespace Datos
                 Command.Parameters.Add("v_idmatricula", OracleDbType.Int32).Value = 0;
                 Command.Parameters.Add("v_valor", OracleDbType.Varchar2).Value = recibo.Cantidad;
                 Command.Parameters.Add("fechamatricula", OracleDbType.Date).Value = DateTime.Now;
-                Command.Parameters.Add("v_idestudiante", OracleDbType.Varchar2).Value = recibo.Id;
+                Command.Parameters.Add("v_idestudiante", OracleDbType.Varchar2).Value = recibo.estudiante.Id;
                 Command.ExecuteNonQuery();
                 Command = new OracleCommand("reciboPackage.insert_recibo", Connection);
                 Command.CommandType = System.Data.CommandType.StoredProcedure;
@@ -69,12 +69,14 @@ namespace Datos
                 return null;
             }
         }
+        RepositorioEstudiantes RepositorioEstudiantes = new RepositorioEstudiantes();
+        RepositorioEscuela repositorioEscuela = new RepositorioEscuela();
 
         public Recibo Mapear(OracleDataReader Fila)
         {
             var recibo = new Recibo();
-            recibo.idescuela = Fila.GetString(0);
-            recibo.Id = int.Parse(Fila.GetString(1));
+            recibo.escuela =repositorioEscuela.buscarByNit(Fila.GetString(0));
+            recibo.estudiante =RepositorioEstudiantes.BuscarEstudiante( int.Parse(Fila.GetString(1)));
             recibo.CodigoReferencia = Fila.GetString(2);
             recibo.Cantidad = Fila.GetInt32(3);
             recibo.Concepto=Fila.GetString(4);

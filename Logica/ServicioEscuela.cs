@@ -97,7 +97,7 @@ namespace Logica
         }
         public Escuela BuscarEscuela(string nit)
         {
-            return repositorioEscuela.buscarByname(nit);
+            return repositorioEscuela.buscarByNit(nit);
         }
         public double total(Escuela escuela)
         {
@@ -112,7 +112,7 @@ namespace Logica
                 _ = new Escuela();
                 foreach (var item in ListEscuelas)
                 {
-                    if (item.NombreEscuela.Trim().Equals(Nombre))
+                    if (item.NombreEscuela.Equals(Nombre))
                     {
                         Escuela escuela = item;
                         return escuela;

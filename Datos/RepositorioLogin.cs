@@ -1,10 +1,6 @@
 ﻿using Entidades;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
 namespace Datos
 {
@@ -73,14 +69,6 @@ namespace Datos
             {
                 return e.Message;
             }
-        }
-        public Login Mapear(string linea)
-        {
-            var usuario=new Login();
-            usuario.Usuario = linea.Trim().Split(';')[0];
-            usuario.Contraseña = linea.Trim().Split(';')[1];
-            usuario.CorreoElectronico = linea.Trim().Split(';')[2];
-            return usuario;
         }
     }
 }

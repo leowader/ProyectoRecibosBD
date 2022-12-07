@@ -32,19 +32,15 @@ namespace PresentacionGUI
                 foreach (var item in servicioEstudiante.Mostrar())
                 {
                     GrillaEstudiantes.Rows.Add(item.Id, item.Nombres, item.Apellidos, item.Sexo,
-                    item.curso,item.Grado, item.PeriodoEstudio, item.idescuela);
+                    item.curso,item.Grado, item.PeriodoEstudio, item.Escuela.NombreEscuela, item.estadoInscripcion);
                 }
             }
-
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             Editar();
         }
-
-        
-
         public void Editar()
         {
             FormEditarEstudiantes formEditarEstudiante = new FormEditarEstudiantes();
@@ -132,6 +128,7 @@ namespace PresentacionGUI
         {
             if (txtfiltro.Text=="")
             {
+                GrillaEstudiantes.Rows.Clear();
                 CargarGrilla();
             }
             else
@@ -145,7 +142,7 @@ namespace PresentacionGUI
             foreach (var item in FiltrosGrilla.Filtrostudent(nombre))
             {
                 GrillaEstudiantes.Rows.Add(item.Id, item.Nombres, item.Apellidos, item.Sexo,
-                item.curso, item.Grado, item.PeriodoEstudio, item.idescuela);
+                item.curso, item.Grado, item.PeriodoEstudio, item.Escuela.NombreEscuela,item.estadoInscripcion);
             }
         }
 

@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace PresentacionGUI
 {
     public partial class RecibosGenerados : Form
@@ -34,7 +33,7 @@ namespace PresentacionGUI
                 GrillaRecibosGenerados.Rows.Clear();
                 foreach (var item in ServicioRecibo.Mostrar())
                 {
-                    GrillaRecibosGenerados.Rows.Add(item.CodigoReferencia, item.Id, item.idescuela, item.Concepto, item.Cantidad,
+                    GrillaRecibosGenerados.Rows.Add(item.CodigoReferencia, item.estudiante.Id, item.escuela.NombreEscuela, item.Concepto, item.Cantidad,
                     item.FechaLimite.ToShortDateString(), item.EstadoPago);
                     //GrillaRecibosGenerados.Rows.Add(item.CodigoReferencia,item.idEstudiante,item.nombre, item.Concepto, item.valor,
                     //item.FechaLimite.ToShortDateString(), item.EstadoPago);
@@ -56,10 +55,16 @@ namespace PresentacionGUI
             var recibo2 = BuscarRecibo();
             EstadoRecibo estadoRecibo = new EstadoRecibo();
             var estado=estadoRecibo.Estado(recibo2.CodigoReferencia);
-            if (estado !=true)
+            var estudiante = BuscarEstudiante();
+            EstadoInscripcion estadoInscripcion = new EstadoInscripcion();
+            var estadoI = estadoInscripcion.Estado(estudiante.Id.ToString());
+            if (estado !=true &&estadoI!=true)
             {
                 recibo2.EstadoPago = "pagado";
+                estudiante.estadoInscripcion = "inscrito";
+                estudiantes.upd(estudiante);
                 ServicioRecibo.Actualizar(recibo2);
+                MessageBox.Show("RECIBO COBRADO CON EXITO", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -152,19 +157,16 @@ namespace PresentacionGUI
             {
                 filtro(txtfiltro.Text);
             }
-            
         }
         void filtro(string referencia)
         {
             GrillaRecibosGenerados.Rows.Clear();
             foreach (var item in FiltrosGrilla.FiltroRecibo(referencia))
             {
-                GrillaRecibosGenerados.Rows.Add(item.CodigoReferencia, item.Id, item.idescuela, item.Concepto, item.Cantidad,
+                GrillaRecibosGenerados.Rows.Add(item.CodigoReferencia, item.estudiante.Id, item.escuela.NombreEscuela, item.Concepto, item.Cantidad,
                     item.FechaLimite.ToShortDateString(), item.EstadoPago);
             }
-            
         }
-
         private void btnbuscar_Click(object sender, EventArgs e)
         {
             filtro(txtfiltro.Text);

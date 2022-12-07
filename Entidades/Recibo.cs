@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Recibo:Estudiante
+    public class Recibo
     {
         public string Concepto { get; set; }
         public double Cantidad { get; set; }
@@ -17,7 +17,8 @@ namespace Entidades
         public string Banco { get; set; }
         public String EstadoPago { get; set; }
         public string Observaciones { get; set; }
-
+        public Escuela escuela { get; set; }
+        public Estudiante estudiante { get; set; }
         public Escuela EscuelaRecibo
         {
             get => default;
@@ -28,7 +29,7 @@ namespace Entidades
         public override string ToString()
         {
             return $"{Concepto};{Cantidad};{CodigoReferencia};{FechaLimite}" +
-                $";{FechaExtraordinaria};{Banco};{EstadoPago};{Observaciones};{Id};{idescuela}"; 
+                $";{FechaExtraordinaria};{Banco};{EstadoPago};{Observaciones}"; 
         }
     }
 }

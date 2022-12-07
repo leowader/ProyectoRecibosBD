@@ -1,4 +1,6 @@
 ﻿using Datos;
+using Entidades;
+using Logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +18,7 @@ namespace Prueba
         public Form1()
         {
             InitializeComponent();
+            cargarCb();
         }
         Datos.RepositorioEscuela RepositorioEscuela = new Datos.RepositorioEscuela();
         RepositorioEstudiantes RepositorioEstudiantes = new RepositorioEstudiantes();
@@ -24,6 +27,20 @@ namespace Prueba
         {
             var estado = RepositorioEscuela.abrirBD();
             MessageBox.Show(estado);
+        }
+        ServicioEscuela ServicioEscuela = new ServicioEscuela();
+
+        void cargarCb()
+        {
+            cbPrueba.DataSource = ServicioEscuela.Mostrar();
+            cbPrueba.DisplayMember = "NombreEscuela";
+        }
+        void guardar()
+        {
+            var escuela = new Escuela();
+            escuela = ServicioEscuela.BuscarNombre(cbPrueba.SelectedItem.ToString());
+            var nombre = escuela.NombreEscuela;
+            MessageBox.Show(nombre);
         }
         void cargar()
         {
@@ -51,6 +68,12 @@ namespace Prueba
         private void btnNum_Click(object sender, EventArgs e)
         {
             txtprueba.Text = new Random().Next(100000,1000000).ToString();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            guardar();
+
         }
     }
 }

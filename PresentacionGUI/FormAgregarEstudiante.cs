@@ -40,7 +40,6 @@ namespace PresentacionGUI
                     estudiante.Id =int.Parse(txtId.Text);
                     estudiante.Nombres = txtNombre.Text;
                     estudiante.Apellidos = txtApellidos.Text;
-                    
                     if (rdHombre.Checked)
                     {
                         estudiante.Sexo = 'M';
@@ -53,7 +52,8 @@ namespace PresentacionGUI
                     estudiante.Grado = txtGrado.Text;
                     estudiante.PeriodoEstudio = cbPeriodo.SelectedItem.ToString();
                     estudiante.codigoCurso = txtcodigoCurso.Text;
-                    estudiante.idescuela = cbEscuela.SelectedItem.ToString();
+                    estudiante.estadoInscripcion = "pre inscrito";
+                    estudiante.Escuela = servicioEscuela.BuscarNombre(cbEscuela.SelectedItem.ToString());
                     var mensaje = servicioEstudiante.Guardar(estudiante);
                     MessageBox.Show(mensaje.ToUpper(), "Regristro Estudiante", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -69,7 +69,6 @@ namespace PresentacionGUI
             cbEscuela.Items.Clear();
             cbEscuela.DataSource = ServicioEscuela.Mostrar();
             cbEscuela.DisplayMember = "NombreEscuela";
-
         }
         private void Limpiar(Control control, Panel group2)
         {

@@ -2,10 +2,6 @@
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace Datos
 {
     public class RepositorioEscuela : ConexionBd, ICrudDatos<Escuela>
@@ -98,11 +94,11 @@ namespace Datos
             }
             return estado;
         }
-        public Escuela buscarByname(string id)
+        public Escuela buscarByNit(string texto)
         {
             foreach (var item in Leer())
             {
-                if (item.NiT == (id))
+                if (item.NiT == (texto)||item.NombreEscuela.Equals(texto))
                 {
                     return item;
                 }

@@ -11,6 +11,12 @@ namespace Entidades
         public Escuela()
         {
         }
+        public string NombreEscuela { get; set; }
+        public string Direccion { get; set; }
+        public string NiT { get; set; }
+        public string Telefono { get; set; }
+        public string Correo { get; set; }
+        public double totalCobro { get; set; }
         public Escuela(string nombreEscuela, string direccion, string niT, string telefono, string correo)
         {
             NombreEscuela = nombreEscuela;
@@ -19,13 +25,6 @@ namespace Entidades
             Telefono = telefono;
             Correo = correo;
         }
-        public string NombreEscuela { get; set; }
-        public string Direccion { get; set; }
-        public string NiT { get; set; }
-        public string Telefono { get; set; }
-        public string Correo { get; set; }
-        public double totalCobro { get; set; }
-
         public Persona EscuelaPersona
         {
             get => default;
@@ -33,9 +32,10 @@ namespace Entidades
             {
             }
         }
+
         public override string ToString()
         {
-            return $"{NiT}";
+            return $"{NombreEscuela}";
         }
     }
 }

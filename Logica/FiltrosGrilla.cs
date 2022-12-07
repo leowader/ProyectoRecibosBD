@@ -23,9 +23,13 @@ namespace Logica
         public List<Recibo> FiltroRecibo(string texto)
         {
             var listfiltro=new List<Recibo>();
+
             foreach (var item in recibos)
             {
-                if (item.CodigoReferencia.StartsWith(texto))
+                if (item.CodigoReferencia.StartsWith(texto)||
+                    item.FechaLimite.Month.ToString().Equals(texto)||
+                    item.FechaLimite.Day.ToString().Equals(texto)||
+                    item.FechaLimite.Year.ToString().Equals(texto))
                 {
                     listfiltro.Add(item);
                 }
@@ -37,7 +41,8 @@ namespace Logica
             var liststudent = new List<Estudiante>();
             foreach (var item in estudies)
             {
-                if (item.Nombres.StartsWith(texto))
+                if (item.Nombres.StartsWith(texto)||
+                    item.Escuela.NombreEscuela.StartsWith(texto))
                 {
                     liststudent.Add(item);
                 }

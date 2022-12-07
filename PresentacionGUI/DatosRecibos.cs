@@ -45,7 +45,7 @@ namespace PresentacionGUI
                 recibo.FechaExtraordinaria = DateTime.Parse(DateExtra.Value.ToString());
                 recibo.Observaciones = txtObservacion.Text;
                 recibo.EstadoPago = "pendiente";
-                recibo.Id = int.Parse(GrillaSelect.Rows[indice].Cells[0].Value.ToString());
+                recibo.estudiante =estudiantes.Buscar( int.Parse(GrillaSelect.Rows[indice].Cells[0].Value.ToString()));
                 var mensage = logicaRecibo.Guardar(recibo);
                 MessageBox.Show(mensage, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtReferencia.Text = new Random().Next(100000, 1000000).ToString();
@@ -88,7 +88,7 @@ namespace PresentacionGUI
                 {
                     if (item.TieneRecibo.Equals('N'))
                     {
-                        GrillaSelect.Rows.Add(item.Id, item.idescuela, item.Grado);
+                        GrillaSelect.Rows.Add(item.Id, item.Escuela.NombreEscuela, item.Grado);
                     }
                 }
             }

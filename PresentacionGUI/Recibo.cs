@@ -37,7 +37,7 @@ namespace PresentacionGUI
             lblName2.Text = escuela.NombreEscuela;
             labeApellido.Text = ReciboEstudiante.Apellidos;
             labelNombre.Text = ReciboEstudiante.Nombres;
-            labeEscuela.Text = ReciboEstudiante.idescuela;
+            //labeEscuela.Text = ReciboEstudiante.idescuela;
             labelPeriodo.Text = ReciboEstudiante.PeriodoEstudio;
             labelObserva.Text = recibo.Observaciones;
             labelRefe.Text = recibo.CodigoReferencia;
