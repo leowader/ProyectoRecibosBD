@@ -1,16 +1,7 @@
 ﻿using Entidades;
 using Microsoft.Reporting.WinForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace PresentacionGUI
 {
     public partial class ImRecibo : Form
@@ -19,7 +10,6 @@ namespace PresentacionGUI
         {
             InitializeComponent();
         }
-
         private void ImRecibo_Load(object sender, EventArgs e)
         {
 

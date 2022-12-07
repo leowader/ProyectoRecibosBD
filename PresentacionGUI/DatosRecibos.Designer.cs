@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelRecibo = new System.Windows.Forms.Panel();
+            this.labelPrueba2 = new System.Windows.Forms.Label();
+            this.labelPrueba = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.GrillaSelect = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Identificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Grado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtObservacion = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.DateExtra = new System.Windows.Forms.DateTimePicker();
@@ -55,8 +57,9 @@
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.labelPrueba = new System.Windows.Forms.Label();
-            this.labelPrueba2 = new System.Windows.Forms.Label();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Identificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Grado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelRecibo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaSelect)).BeginInit();
             this.panelBtn.SuspendLayout();
@@ -89,6 +92,26 @@
             this.panelRecibo.Size = new System.Drawing.Size(668, 400);
             this.panelRecibo.TabIndex = 0;
             // 
+            // labelPrueba2
+            // 
+            this.labelPrueba2.AutoSize = true;
+            this.labelPrueba2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelPrueba2.Location = new System.Drawing.Point(515, 19);
+            this.labelPrueba2.Name = "labelPrueba2";
+            this.labelPrueba2.Size = new System.Drawing.Size(22, 13);
+            this.labelPrueba2.TabIndex = 54;
+            this.labelPrueba2.Text = "xxx";
+            // 
+            // labelPrueba
+            // 
+            this.labelPrueba.AutoSize = true;
+            this.labelPrueba.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelPrueba.Location = new System.Drawing.Point(401, 19);
+            this.labelPrueba.Name = "labelPrueba";
+            this.labelPrueba.Size = new System.Drawing.Size(22, 13);
+            this.labelPrueba.TabIndex = 53;
+            this.labelPrueba.Text = "xxx";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -104,57 +127,49 @@
             // 
             this.GrillaSelect.AllowUserToAddRows = false;
             this.GrillaSelect.AllowUserToDeleteRows = false;
-            this.GrillaSelect.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(5)))), ((int)(((byte)(22)))));
+            this.GrillaSelect.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GrillaSelect.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.GrillaSelect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GrillaSelect.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
             this.Identificacion,
             this.Grado});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.BlueViolet;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GrillaSelect.DefaultCellStyle = dataGridViewCellStyle4;
             this.GrillaSelect.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.GrillaSelect.Location = new System.Drawing.Point(401, 55);
             this.GrillaSelect.Name = "GrillaSelect";
             this.GrillaSelect.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GrillaSelect.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GrillaSelect.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.GrillaSelect.RowHeadersVisible = false;
             this.GrillaSelect.RowHeadersWidth = 10;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(5)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
-            this.GrillaSelect.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.GrillaSelect.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.GrillaSelect.Size = new System.Drawing.Size(180, 276);
             this.GrillaSelect.TabIndex = 51;
             this.GrillaSelect.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaSelect_CellClick);
-            // 
-            // Nombre
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.Nombre.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Nombre.HeaderText = "Identificacion";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Identificacion
-            // 
-            this.Identificacion.HeaderText = "Escuela";
-            this.Identificacion.Name = "Identificacion";
-            this.Identificacion.ReadOnly = true;
-            this.Identificacion.Width = 80;
-            // 
-            // Grado
-            // 
-            this.Grado.HeaderText = "Grado";
-            this.Grado.Name = "Grado";
-            this.Grado.ReadOnly = true;
-            this.Grado.Width = 70;
             // 
             // txtObservacion
             // 
@@ -352,25 +367,35 @@
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // labelPrueba
+            // Nombre
             // 
-            this.labelPrueba.AutoSize = true;
-            this.labelPrueba.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelPrueba.Location = new System.Drawing.Point(401, 19);
-            this.labelPrueba.Name = "labelPrueba";
-            this.labelPrueba.Size = new System.Drawing.Size(22, 13);
-            this.labelPrueba.TabIndex = 53;
-            this.labelPrueba.Text = "xxx";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.Nombre.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Nombre.HeaderText = "Identificacion";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
-            // labelPrueba2
+            // Identificacion
             // 
-            this.labelPrueba2.AutoSize = true;
-            this.labelPrueba2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelPrueba2.Location = new System.Drawing.Point(515, 19);
-            this.labelPrueba2.Name = "labelPrueba2";
-            this.labelPrueba2.Size = new System.Drawing.Size(22, 13);
-            this.labelPrueba2.TabIndex = 54;
-            this.labelPrueba2.Text = "xxx";
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.Identificacion.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Identificacion.HeaderText = "Escuela";
+            this.Identificacion.Name = "Identificacion";
+            this.Identificacion.ReadOnly = true;
+            this.Identificacion.Width = 80;
+            // 
+            // Grado
+            // 
+            this.Grado.HeaderText = "Grado";
+            this.Grado.Name = "Grado";
+            this.Grado.ReadOnly = true;
+            this.Grado.Width = 70;
             // 
             // DatosRecibos
             // 
@@ -413,10 +438,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView GrillaSelect;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelPrueba;
+        private System.Windows.Forms.Label labelPrueba2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Identificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Grado;
-        private System.Windows.Forms.Label labelPrueba;
-        private System.Windows.Forms.Label labelPrueba2;
     }
 }

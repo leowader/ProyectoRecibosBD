@@ -31,7 +31,6 @@ namespace PresentacionGUI
         {
             Editar();
         }
-
         int Id;
         void Editar()
         {
@@ -51,8 +50,7 @@ namespace PresentacionGUI
                 {
                     estudiante.Sexo = 'F';
                 }
-                estudiante.curso = txtCurso.Text;
-                estudiante.Grado = txtGrado.Text;
+                estudiante.codigoCurso= txtCurso.Text;
                 estudiante.PeriodoEstudio = cbPeriodo.SelectedItem.ToString();
                 //var escuela = servicioEscuela.BuscarNombre(cbEscuela.SelectedItem.ToString());
                 //estudiante.idescuela = (escuela.NiT.ToString());
@@ -77,7 +75,6 @@ namespace PresentacionGUI
             rdHombre.Enabled = false;
             rdMujer.Enabled = false;
             cbEscuela.Enabled = false;
-            txtCurso.Enabled = false;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

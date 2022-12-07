@@ -30,8 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditarEstudiantes));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtGrado = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -51,19 +50,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.txtGrado);
-            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.pictureBox1);
@@ -90,24 +86,15 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // txtGrado
+            // pictureBox2
             // 
-            this.txtGrado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.txtGrado.ForeColor = System.Drawing.SystemColors.Menu;
-            this.txtGrado.Location = new System.Drawing.Point(82, 286);
-            this.txtGrado.Name = "txtGrado";
-            this.txtGrado.Size = new System.Drawing.Size(201, 20);
-            this.txtGrado.TabIndex = 19;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(22, 289);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 13);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "Grado";
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(82, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(505, 76);
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
             // 
             // groupBox2
             // 
@@ -150,7 +137,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(193, 332);
+            this.label7.Location = new System.Drawing.Point(192, 301);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 13);
             this.label7.TabIndex = 14;
@@ -173,7 +160,7 @@
             // 
             this.cbEscuela.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEscuela.FormattingEnabled = true;
-            this.cbEscuela.Location = new System.Drawing.Point(244, 324);
+            this.cbEscuela.Location = new System.Drawing.Point(243, 293);
             this.cbEscuela.Name = "cbEscuela";
             this.cbEscuela.Size = new System.Drawing.Size(122, 21);
             this.cbEscuela.TabIndex = 13;
@@ -187,7 +174,7 @@
             "2",
             "3",
             "4"});
-            this.cbPeriodo.Location = new System.Drawing.Point(82, 324);
+            this.cbPeriodo.Location = new System.Drawing.Point(98, 293);
             this.cbPeriodo.Name = "cbPeriodo";
             this.cbPeriodo.Size = new System.Drawing.Size(88, 21);
             this.cbPeriodo.TabIndex = 12;
@@ -196,7 +183,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(22, 332);
+            this.label6.Location = new System.Drawing.Point(21, 301);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 11;
@@ -206,7 +193,7 @@
             // 
             this.txtCurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.txtCurso.ForeColor = System.Drawing.SystemColors.Menu;
-            this.txtCurso.Location = new System.Drawing.Point(82, 249);
+            this.txtCurso.Location = new System.Drawing.Point(98, 249);
             this.txtCurso.Name = "txtCurso";
             this.txtCurso.Size = new System.Drawing.Size(201, 20);
             this.txtCurso.TabIndex = 10;
@@ -217,9 +204,9 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label5.Location = new System.Drawing.Point(22, 252);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.Size = new System.Drawing.Size(70, 13);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Curso";
+            this.label5.Text = "Codigo Curso";
             // 
             // rdMujer
             // 
@@ -237,7 +224,7 @@
             // 
             this.rdHombre.AutoSize = true;
             this.rdHombre.ForeColor = System.Drawing.SystemColors.Control;
-            this.rdHombre.Location = new System.Drawing.Point(82, 213);
+            this.rdHombre.Location = new System.Drawing.Point(97, 215);
             this.rdHombre.Name = "rdHombre";
             this.rdHombre.Size = new System.Drawing.Size(62, 17);
             this.rdHombre.TabIndex = 7;
@@ -259,7 +246,7 @@
             // 
             this.txtApellidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.txtApellidos.ForeColor = System.Drawing.SystemColors.Menu;
-            this.txtApellidos.Location = new System.Drawing.Point(82, 177);
+            this.txtApellidos.Location = new System.Drawing.Point(98, 180);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(201, 20);
             this.txtApellidos.TabIndex = 5;
@@ -268,7 +255,7 @@
             // 
             this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.txtNombre.ForeColor = System.Drawing.SystemColors.Menu;
-            this.txtNombre.Location = new System.Drawing.Point(82, 134);
+            this.txtNombre.Location = new System.Drawing.Point(98, 134);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(201, 20);
             this.txtNombre.TabIndex = 4;
@@ -277,7 +264,7 @@
             // 
             this.txtId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.txtId.ForeColor = System.Drawing.SystemColors.Menu;
-            this.txtId.Location = new System.Drawing.Point(82, 94);
+            this.txtId.Location = new System.Drawing.Point(98, 93);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(66, 20);
             this.txtId.TabIndex = 3;
@@ -307,21 +294,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(48, 96);
+            this.label1.Location = new System.Drawing.Point(22, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(82, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(505, 76);
-            this.pictureBox2.TabIndex = 20;
-            this.pictureBox2.TabStop = false;
             // 
             // FormEditarEstudiantes
             // 
@@ -336,9 +313,9 @@
             this.Load += new System.EventHandler(this.FormEditarEstudiantes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -365,8 +342,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAgregar;
-        public System.Windows.Forms.TextBox txtGrado;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
