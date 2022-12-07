@@ -69,5 +69,21 @@ namespace Logica
             return "ok";
         }
         
+        public double totalRecibo(Escuela escuela)
+        {
+            double suma = 0;
+            string nombre2=escuela.NombreEscuela;
+            foreach (var item in Mostrar())
+            {
+                string nombre=item.escuela.NombreEscuela;
+
+                if (nombre.Equals(nombre2))
+                {
+                    suma+=item.Cantidad;
+                }
+            }
+            return suma;
+        }
+        
     }
 }

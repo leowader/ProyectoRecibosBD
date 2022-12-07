@@ -250,7 +250,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>correo</rd:DefaultName>
-            <Top>3.21676cm</Top>
+            <Top>3.18148cm</Top>
             <Left>4.79994cm</Left>
             <Height>0.6cm</Height>
             <Width>5.12881cm</Width>
@@ -469,7 +469,7 @@
             <Top>0.35814cm</Top>
             <Left>10.34419cm</Left>
             <Height>2.88451cm</Height>
-            <Width>6.56104cm</Width>
+            <Width>6.56105cm</Width>
             <ZIndex>10</ZIndex>
             <Style>
               <Border>
@@ -490,7 +490,6 @@
                 </Style>
               </Line>
               <Line Name="Line10">
-                <Top>0cm</Top>
                 <Left>13.2668cm</Left>
                 <Height>0.48917cm</Height>
                 <Width>0cm</Width>
@@ -680,7 +679,6 @@
               </Textbox>
               <Line Name="Line5">
                 <Top>2.36416cm</Top>
-                <Left>0cm</Left>
                 <Height>0cm</Height>
                 <Width>16.1767cm</Width>
                 <ZIndex>7</ZIndex>
@@ -1319,7 +1317,6 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox1</rd:DefaultName>
-                <Left>0cm</Left>
                 <Height>0.6cm</Height>
                 <Width>2.73484cm</Width>
                 <Style>

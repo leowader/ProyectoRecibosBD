@@ -40,7 +40,6 @@ namespace PresentacionGUI
                 }
             }
         }
-
         private void RecibosGenerados_Load(object sender, EventArgs e)
         {
             cargarGrilla();
@@ -170,6 +169,17 @@ namespace PresentacionGUI
         private void btnbuscar_Click(object sender, EventArgs e)
         {
             filtro(txtfiltro.Text);
+        }
+        
+        void totalEscuela()
+        {
+            double total = 0;
+            total=ServicioRecibo.totalRecibo(BuscarEscuela());
+            MessageBox.Show($"A LA ESCUELA {BuscarEscuela().NombreEscuela.ToUpper()} LE DEBEN PAGAR : ${total}");    
+        }
+        private void btnTotal_Click(object sender, EventArgs e)
+        {
+            totalEscuela();
         }
     }
 }

@@ -38,7 +38,14 @@ namespace Logica
             try
             {
                 var estado = Rutalogin.verificarUsuario(user);
-                return true;
+                if (estado.Equals("SI"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception )
             {
